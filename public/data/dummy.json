@@ -1,0 +1,501 @@
+{
+  "homepage": {
+    "hero": {
+      "title": "Discover the Spiritual Journey",
+      "subtitle": "Explore our curated Umrah and Hajj packages for a meaningful pilgrimage experience",
+      "buttonText": "Explore Packages",
+      "image": "/hero.png"
+    },
+    "features": [
+      {
+        "icon": "umrah",
+        "title": "Umrah Packages",
+        "description": "Comprehensive packages for your spiritual journey to the holy cities"
+      },
+      {
+        "icon": "hotel",
+        "title": "Premium Accommodations",
+        "description": "Stay in comfortable hotels close to the holy sites"
+      },
+      {
+        "icon": "flight",
+        "title": "Flight Bookings",
+        "description": "Convenient flight arrangements from major cities worldwide"
+      },
+      {
+        "icon": "people",
+        "title": "Expert Guides",
+        "description": "Knowledgeable guides to assist you throughout your journey"
+      }
+    ],
+    "destinations": [
+      {
+        "id": 1,
+        "name": "Makkah",
+        "image": "/hero-section.jpg",
+        "description": "The holiest city in Islam and the birthplace of Prophet Muhammad ﷺ",
+        "tours": 12
+      },
+      {
+        "id": 2,
+        "name": "Madinah",
+        "image": "/map.jpg",
+        "description": "The second holiest city in Islam and home to the Prophet's Mosque",
+        "tours": 8
+      },
+      {
+        "id": 3,
+        "name": "Istanbul",
+        "image": "/hero.png",
+        "description": "A city rich in Islamic heritage and Ottoman history",
+        "tours": 6
+      }
+    ],
+    "testimonials": [
+      {
+        "id": 1,
+        "name": "Ahmed Khan",
+        "location": "London, UK",
+        "rating": 5,
+        "comment": "The Umrah package exceeded my expectations. The accommodations were excellent, and the guides were knowledgeable and helpful."
+      },
+      {
+        "id": 2,
+        "name": "Fatima Ali",
+        "location": "New York, USA",
+        "rating": 5,
+        "comment": "A truly spiritual experience. Everything was well-organized, allowing me to focus on worship without worrying about logistics."
+      },
+      {
+        "id": 3,
+        "name": "Mohammed Rahman",
+        "location": "Sydney, Australia",
+        "rating": 4,
+        "comment": "Great service and support throughout the journey. The only minor issue was the airport transfer delay, but everything else was perfect."
+      }
+    ],
+    "stats": {
+      "destinations": 15,
+      "tours": 25,
+      "customers": 10000,
+      "hotels": 50
+    }
+  },
+  "tours": [
+    {
+      "id": 1,
+      "title": "Umrah, Makkah & Medinah – 9 Days 8 Nights",
+      "location": "Bryce Canyon National Park, USA",
+      "views": 248,
+      "rating": 5,
+      "price": 42.0,
+      "discountedPrice": 42.0,
+      "images": ["/hero-section.jpg", "/hero.png", "/map.jpg"],
+      "keyInfo": {
+        "duration": "9 days",
+        "maxPeople": "40",
+        "minAge": "12+",
+        "pickup": "Airport"
+      },
+      "makkahHighlights": [
+        {
+          "title": "Masjid al-Haram",
+          "description": "Prayers in the holiest mosque in Islam."
+        },
+        {
+          "title": "Kaaba",
+          "description": "Heart of the Islamic world, focus of every Muslim's prayer."
+        },
+        {
+          "title": "Zamzam Well",
+          "description": "Drinking and collecting blessed water."
+        },
+        {
+          "title": "Jabal al-Noor",
+          "description": "Cave of Hira – first revelation site."
+        },
+        {
+          "title": "Jabal al-Thawr",
+          "description": "Site where Prophet Muhammad ﷺ hid during Hijrah."
+        }
+      ],
+      "medinaHighlights": [
+        {
+          "title": "Masjid al-Nabawi",
+          "description": "Praying in the Prophet's Mosque."
+        },
+        {
+          "title": "Rawdah",
+          "description": "Area between Prophet's tomb and pulpit, considered part of Paradise."
+        },
+        {
+          "title": "Zamzam Well",
+          "description": "Drinking and collecting blessed water."
+        },
+        {
+          "title": "Quba Mosque",
+          "description": "First mosque built in Islam."
+        },
+        {
+          "title": "Jabal al-Thawr",
+          "description": "Site of the famous Battle of Uhud."
+        }
+      ],
+      "includeExclude": {
+        "included": [
+          "Specialized bilingual guide",
+          "Private Transport",
+          "Entrance fees (Cable and car and Moon Valley)",
+          "Box lunch water, banana apple and chocolate"
+        ],
+        "excluded": [
+          "Departure Taxes",
+          "Entry Fees",
+          "5 Star Accommodation",
+          "Airport Transfers"
+        ]
+      },
+      "overview": "Experience the spiritual journey of a lifetime with our 9-day Umrah package. This carefully crafted itinerary takes you to the holiest sites in Islam, providing ample time for worship, reflection, and exploration. Our experienced guides will ensure your journey is comfortable, educational, and spiritually fulfilling."
+    },
+    {
+      "id": 2,
+      "title": "Hajj Package – 14 Days Premium Experience",
+      "location": "Makkah & Madinah, Saudi Arabia",
+      "views": 356,
+      "rating": 5,
+      "price": 78.0,
+      "discountedPrice": 65.0,
+      "images": ["/hero-section.jpg", "/hero.png", "/map.jpg"],
+      "keyInfo": {
+        "duration": "14 days",
+        "maxPeople": "30",
+        "minAge": "18+",
+        "pickup": "Airport"
+      },
+      "makkahHighlights": [
+        {
+          "title": "Masjid al-Haram",
+          "description": "Prayers in the holiest mosque in Islam."
+        },
+        {
+          "title": "Kaaba",
+          "description": "Heart of the Islamic world, focus of every Muslim's prayer."
+        },
+        {
+          "title": "Mount Arafat",
+          "description": "Standing at Arafat, the pinnacle of Hajj."
+        },
+        {
+          "title": "Mina",
+          "description": "Stay in the tent city during the days of Hajj."
+        },
+        {
+          "title": "Muzdalifah",
+          "description": "Collecting pebbles for the stoning ritual."
+        }
+      ],
+      "medinaHighlights": [
+        {
+          "title": "Masjid al-Nabawi",
+          "description": "Praying in the Prophet's Mosque."
+        },
+        {
+          "title": "Rawdah",
+          "description": "Area between Prophet's tomb and pulpit, considered part of Paradise."
+        },
+        {
+          "title": "Quba Mosque",
+          "description": "First mosque built in Islam."
+        },
+        {
+          "title": "Jannat al-Baqi",
+          "description": "Cemetery where many of the Prophet's companions are buried."
+        },
+        {
+          "title": "Mount Uhud",
+          "description": "Site of the famous Battle of Uhud."
+        }
+      ],
+      "includeExclude": {
+        "included": [
+          "Specialized religious guide",
+          "Private Transport",
+          "5-star accommodation",
+          "All meals included",
+          "Visa processing"
+        ],
+        "excluded": [
+          "Personal expenses",
+          "Qurbani (sacrifice)",
+          "Phone calls",
+          "Laundry services"
+        ]
+      },
+      "overview": "Our premium Hajj package offers a comprehensive and comfortable experience for pilgrims. With 5-star accommodations, experienced guides, and all logistics handled, you can focus entirely on your spiritual journey. This package includes all necessary transportation, meals, and guidance through each step of the Hajj rituals."
+    },
+    {
+      "id": 3,
+      "title": "Islamic Heritage Tour – 7 Days - Direct Flight",
+      "location": "Istanbul, Turkey",
+      "views": 189,
+      "rating": 4.5,
+      "price": 35.0,
+      "discountedPrice": 30.0,
+      "images": ["/hero-section.jpg", "/hero.png", "/map.jpg"],
+      "keyInfo": {
+        "duration": "7 days",
+        "maxPeople": "25",
+        "minAge": "10+",
+        "pickup": "Hotel"
+      },
+      "makkahHighlights": [],
+      "medinaHighlights": [],
+      "includeExclude": {
+        "included": [
+          "Professional tour guide",
+          "Hotel accommodation",
+          "Daily breakfast",
+          "All entrance fees",
+          "Airport transfers"
+        ],
+        "excluded": [
+          "International flights",
+          "Travel insurance",
+          "Personal expenses",
+          "Optional activities"
+        ]
+      },
+      "overview": "Explore the rich Islamic heritage of Istanbul with our 7-day tour. Visit historic mosques, palaces, and museums that showcase the grandeur of Islamic civilization. Our knowledgeable guides will take you through centuries of history, art, and architecture in this magnificent city where East meets West."
+    },
+    {
+      "id": 4,
+      "title": "Ramadan Umrah Special – 10 Days",
+      "location": "Makkah & Madinah, Saudi Arabia",
+      "views": 275,
+      "rating": 4.8,
+      "price": 55.0,
+      "discountedPrice": 45.0,
+      "images": ["/hero-section.jpg", "/hero.png", "/map.jpg"],
+      "keyInfo": {
+        "duration": "10 days",
+        "maxPeople": "35",
+        "minAge": "12+",
+        "pickup": "Airport"
+      },
+      "makkahHighlights": [
+        {
+          "title": "Masjid al-Haram",
+          "description": "Experience Taraweeh prayers in the holiest mosque in Islam."
+        },
+        {
+          "title": "Iftar Experience",
+          "description": "Break your fast in the vicinity of the Kaaba."
+        },
+        {
+          "title": "Laylatul Qadr",
+          "description": "Possibility to experience the Night of Power during the last 10 days."
+        },
+        {
+          "title": "Jabal al-Noor",
+          "description": "Visit the Cave of Hira where the first revelation occurred."
+        }
+      ],
+      "medinaHighlights": [
+        {
+          "title": "Masjid al-Nabawi",
+          "description": "Experience the special atmosphere of Ramadan in the Prophet's Mosque."
+        },
+        {
+          "title": "Rawdah",
+          "description": "Pray in the area known as a piece of Paradise."
+        },
+        {
+          "title": "Quba Mosque",
+          "description": "Visit the first mosque built in Islam."
+        }
+      ],
+      "includeExclude": {
+        "included": [
+          "Specialized Ramadan guide",
+          "Private Transport",
+          "4-star accommodation",
+          "Suhoor and Iftar meals",
+          "Visa processing"
+        ],
+        "excluded": [
+          "Personal expenses",
+          "Phone calls",
+          "Laundry services",
+          "Optional tours"
+        ]
+      },
+      "overview": "Experience the blessed month of Ramadan in the holiest cities of Islam with our special 10-day package. This unique spiritual journey allows you to perform Umrah, pray Taraweeh, and possibly experience Laylatul Qadr in Makkah. Our package includes comfortable accommodations close to the holy sites, daily Suhoor and Iftar meals, and experienced guides to enhance your spiritual experience."
+    },
+    {
+      "id": 5,
+      "title": "Family Umrah Package – 12 Days",
+      "location": "Makkah & Madinah, Saudi Arabia",
+      "views": 312,
+      "rating": 4.9,
+      "price": 60.0,
+      "discountedPrice": 52.0,
+      "images": ["/hero-section.jpg", "/hero.png", "/map.jpg"],
+      "keyInfo": {
+        "duration": "12 days",
+        "maxPeople": "Family of 5",
+        "minAge": "All ages",
+        "pickup": "Airport"
+      },
+      "makkahHighlights": [
+        {
+          "title": "Masjid al-Haram",
+          "description": "Family-friendly guidance for Tawaf and Sa'i."
+        },
+        {
+          "title": "Kaaba",
+          "description": "Special arrangements for families with children."
+        },
+        {
+          "title": "Zamzam Well",
+          "description": "Learn about the history and significance with child-friendly explanations."
+        },
+        {
+          "title": "Makkah Museum",
+          "description": "Educational visit suitable for all family members."
+        }
+      ],
+      "medinaHighlights": [
+        {
+          "title": "Masjid al-Nabawi",
+          "description": "Family-friendly visit to the Prophet's Mosque."
+        },
+        {
+          "title": "Date Farms",
+          "description": "Visit local date farms for a family experience."
+        },
+        {
+          "title": "Uhud Mountain",
+          "description": "Educational tour about the Battle of Uhud."
+        }
+      ],
+      "includeExclude": {
+        "included": [
+          "Family-friendly accommodations",
+          "Private family transport",
+          "Child-friendly meals",
+          "Educational materials for children",
+          "Family visa processing"
+        ],
+        "excluded": [
+          "Personal shopping",
+          "Additional excursions",
+          "Phone calls",
+          "Laundry services"
+        ]
+      },
+      "overview": "Our Family Umrah Package is specially designed to make the spiritual journey accessible and meaningful for families with children. With family-friendly accommodations, private transportation, and guides experienced in working with children, this package ensures that every family member, regardless of age, can fully participate in and benefit from this sacred journey. Educational materials and child-friendly explanations of rituals and sites make this an enriching experience for the whole family."
+    },
+    {
+      "id": 6,
+      "title": "Islamic Spain Tour – 8 Days",
+      "location": "Andalusia, Spain",
+      "views": 198,
+      "rating": 4.7,
+      "price": 48.0,
+      "discountedPrice": 40.0,
+      "images": ["/hero-section.jpg", "/hero.png", "/map.jpg"],
+      "keyInfo": {
+        "duration": "8 days",
+        "maxPeople": "20",
+        "minAge": "12+",
+        "pickup": "Hotel"
+      },
+      "makkahHighlights": [],
+      "medinaHighlights": [],
+      "includeExclude": {
+        "included": [
+          "Expert Islamic history guide",
+          "Luxury coach transport",
+          "4-star accommodation",
+          "Daily breakfast and dinner",
+          "All entrance fees"
+        ],
+        "excluded": [
+          "International flights",
+          "Travel insurance",
+          "Personal expenses",
+          "Lunches"
+        ]
+      },
+      "overview": "Journey through the golden age of Islamic civilization in Andalusia with our 8-day tour of Islamic Spain. Visit the magnificent Alhambra in Granada, the Great Mosque of Cordoba, and the Giralda in Seville. Learn about the rich contributions of Muslim scholars, scientists, and artists who flourished in Al-Andalus. Our expert guides will bring history to life as you walk in the footsteps of figures like Ibn Rushd, Ibn Arabi, and others who shaped world history."
+    },
+    {
+      "id": 7,
+      "title": "Morocco Islamic Heritage – 9 Days",
+      "location": "Morocco",
+      "views": 231,
+      "rating": 4.6,
+      "price": 50.0,
+      "discountedPrice": 42.0,
+      "images": ["/hero-section.jpg", "/hero.png", "/map.jpg"],
+      "keyInfo": {
+        "duration": "9 days",
+        "maxPeople": "18",
+        "minAge": "10+",
+        "pickup": "Airport"
+      },
+      "makkahHighlights": [],
+      "medinaHighlights": [],
+      "includeExclude": {
+        "included": [
+          "Local Islamic scholar guide",
+          "Private transport",
+          "Traditional riad accommodation",
+          "Daily breakfast",
+          "Welcome and farewell dinners"
+        ],
+        "excluded": [
+          "International flights",
+          "Travel insurance",
+          "Personal expenses",
+          "Most lunches and dinners"
+        ]
+      },
+      "overview": "Discover the rich Islamic heritage of Morocco with our 9-day tour through the country's imperial cities. Visit the ancient University of Al Quaraouiyine in Fez, the oldest continuously operating educational institution in the world. Explore the magnificent Hassan II Mosque in Casablanca and wander through the historic medinas with their traditional crafts and architecture. Experience the unique blend of Arab, Berber, and Andalusian influences that have shaped Moroccan Islamic culture over centuries."
+    },
+    {
+      "id": 8,
+      "title": "Egypt Islamic Tour – 10 Days",
+      "location": "Cairo, Alexandria & Luxor, Egypt",
+      "views": 267,
+      "rating": 4.5,
+      "price": 52.0,
+      "discountedPrice": 45.0,
+      "images": ["/hero-section.jpg", "/hero.png", "/map.jpg"],
+      "keyInfo": {
+        "duration": "10 days",
+        "maxPeople": "22",
+        "minAge": "8+",
+        "pickup": "Airport"
+      },
+      "makkahHighlights": [],
+      "medinaHighlights": [],
+      "includeExclude": {
+        "included": [
+          "Egyptologist and Islamic history guide",
+          "Private air-conditioned transport",
+          "4-star accommodation",
+          "Daily breakfast",
+          "Nile dinner cruise"
+        ],
+        "excluded": [
+          "International flights",
+          "Egypt entry visa",
+          "Personal expenses",
+          "Optional activities"
+        ]
+      },
+      "overview": "Journey through Islamic Egypt with our comprehensive 10-day tour. Visit Al-Azhar Mosque and University, one of the oldest Islamic educational institutions in the world. Explore the magnificent mosques of Cairo, including the Muhammad Ali Mosque and Ibn Tulun Mosque. Discover the Islamic heritage alongside the ancient Egyptian civilization in a tour that bridges thousands of years of history. Our expert guides will provide insights into how Islam flourished in Egypt and the significant contributions of Egyptian scholars to Islamic thought and culture."
+    }
+  ]
+}
