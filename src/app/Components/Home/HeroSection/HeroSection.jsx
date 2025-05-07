@@ -67,7 +67,7 @@ const HeroSection = () => {
               {/* Destination */}
               <div className="flex flex-col gap-1">
                 <label className="text-base font-bold flex items-center gap-1">
-                  <IoLocationSharp className="text-2xl" />
+                  <IoLocationSharp className="text-2xl text-[#FD4C5C]" />
                   <span>Destination</span>
                 </label>
                 <input
@@ -80,7 +80,7 @@ const HeroSection = () => {
               {/* Room Type */}
               <div className="flex flex-col gap-1">
                 <label className="text-base font-bold flex items-center gap-1">
-                  <MdMeetingRoom className="text-2xl" />
+                  <MdMeetingRoom className="text-2xl text-[#FD4C5C]" />
                   <span>Room Type</span>
                 </label>
                 <select className="border p-3 rounded-md w-full">
@@ -94,7 +94,7 @@ const HeroSection = () => {
                   htmlFor="checkIn"
                   className="text-base font-bold flex items-center gap-1"
                 >
-                  <CiCalendarDate className="text-2xl" />
+                  <CiCalendarDate className="text-2xl text-[#FD4C5C]" />
                   <span>Check In</span>
                 </label>
                 <input
@@ -107,7 +107,7 @@ const HeroSection = () => {
               {/* Guest */}
               <div className="flex flex-col gap-1">
                 <label className="text-base font-bold flex items-center gap-1">
-                  <FaUser className="text-2xl" />
+                  <FaUser className="text-2xl text-[#FD4C5C]" />
                   <span>Guest</span>
                 </label>
                 <p className="p-3 border rounded-md">0</p>
@@ -116,7 +116,7 @@ const HeroSection = () => {
               {/* Search Button */}
               <div className="flex justify-end w-full">
                 <button className="btn-primary flex items-center justify-center gap-1 px-6 py-3 rounded-md w-full md:w-auto">
-                  <CiSearch className="text-2xl" />
+                  <CiSearch className="text-2xl text-[#FD4C5C]" />
                   <span>Search</span>
                 </button>
               </div>
