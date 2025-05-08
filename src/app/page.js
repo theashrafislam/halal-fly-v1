@@ -3,6 +3,7 @@ import HeroSection from "./Components/Home/HeroSection/HeroSection";
 import DiscoverWeeklySection from "./Components/Home/DiscoverWeeklySection/DiscoverWeeklySection";
 import WhatToExpectSection from "./Components/Home/WhatToExpectSection/WhatToExpectSection";
 import ExploreWithPeaceSection from "./Components/Home/ExploreWithPeaceSection/ExploreWithPeaceSection";
+import TravelGuidelineSection from "./Components/Home/TravelGuidelineSection/TravelGuidelineSection";
 
 export default function Home() {
   return (
@@ -18,6 +19,9 @@ export default function Home() {
 
       {/* Explore With Peace Section  */}
       <ExploreWithPeaceSection />
+
+      {/* Travel Guideline Section */}
+      <TravelGuidelineSection />
     </div>
   );
 }
