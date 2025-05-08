@@ -64,7 +64,7 @@ const DiscoverWeeklySection = () => {
   }
 
   return (
-    <section className="bg-[#000000] text-[#D0A148] py-16 lg:py-20">
+    <section className="bg-[#10111A] text-[#D0A148] py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-8">
           <div className="pb-6 md:pb-[56px]">
