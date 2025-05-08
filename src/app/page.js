@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HeroSection from "./Components/Home/HeroSection/HeroSection";
 import DiscoverWeeklySection from "./Components/Home/DiscoverWeeklySection/DiscoverWeeklySection";
+import WhatToExpectSection from "./Components/Home/WhatToExpectSection/WhatToExpectSection";
 
 export default function Home() {
   return (
@@ -10,6 +11,9 @@ export default function Home() {
       
       {/* Discover Weekly Section */}
       <DiscoverWeeklySection />
+
+      {/* What to exprect section  */}
+      <WhatToExpectSection />
     </div>
   );
 }
