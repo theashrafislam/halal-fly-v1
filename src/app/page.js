@@ -4,6 +4,7 @@ import DiscoverWeeklySection from "./Components/Home/DiscoverWeeklySection/Disco
 import WhatToExpectSection from "./Components/Home/WhatToExpectSection/WhatToExpectSection";
 import ExploreWithPeaceSection from "./Components/Home/ExploreWithPeaceSection/ExploreWithPeaceSection";
 import TravelGuidelineSection from "./Components/Home/TravelGuidelineSection/TravelGuidelineSection";
+import PopularDestinationsSection from "./Components/Home/PopularDestinationsSection/PopularDestinationsSection";
 
 export default function Home() {
   return (
@@ -22,6 +23,9 @@ export default function Home() {
 
       {/* Travel Guideline Section */}
       <TravelGuidelineSection />
+
+      {/* Popular Destinations Section */}
+      <PopularDestinationsSection />
     </div>
   );
 }
