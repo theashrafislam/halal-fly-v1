@@ -6,13 +6,17 @@ import ExploreWithPeaceSection from "./Components/Home/ExploreWithPeaceSection/E
 import TravelGuidelineSection from "./Components/Home/TravelGuidelineSection/TravelGuidelineSection";
 import PopularDestinationsSection from "./Components/Home/PopularDestinationsSection/PopularDestinationsSection";
 import ReviewSection from "./Components/Home/ReviewSection/ReviewSection";
+import FeaturesSection from "./Components/Home/FeaturesSection/FeaturesSection";
+import OurStorySection from "./Components/Home/OurStorySection/OurStorySection";
+import BlogSection from "./Components/Home/BlogSection/BlogSection";
+import SubscribeSection from "./Components/Home/SubscribeSection/SubscribeSection";
 
 export default function Home() {
   return (
     <div>
       {/* Hero Section  */}
       <HeroSection />
-      
+
       {/* Discover Weekly Section */}
       <DiscoverWeeklySection />
 
@@ -30,6 +34,18 @@ export default function Home() {
 
       {/* Review Section  */}
       <ReviewSection />
+
+      {/* Features Section */}
+      <FeaturesSection />
+
+      {/* Our Story Section */}
+      <OurStorySection />
+
+      {/* Blog Section  */}
+      <BlogSection />
+
+      {/* Subscribe Section */}
+      <SubscribeSection />
     </div>
   );
 }
