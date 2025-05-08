@@ -5,6 +5,7 @@ import WhatToExpectSection from "./Components/Home/WhatToExpectSection/WhatToExp
 import ExploreWithPeaceSection from "./Components/Home/ExploreWithPeaceSection/ExploreWithPeaceSection";
 import TravelGuidelineSection from "./Components/Home/TravelGuidelineSection/TravelGuidelineSection";
 import PopularDestinationsSection from "./Components/Home/PopularDestinationsSection/PopularDestinationsSection";
+import ReviewSection from "./Components/Home/ReviewSection/ReviewSection";
 
 export default function Home() {
   return (
@@ -26,6 +27,9 @@ export default function Home() {
 
       {/* Popular Destinations Section */}
       <PopularDestinationsSection />
+
+      {/* Review Section  */}
+      <ReviewSection />
     </div>
   );
 }
