@@ -10,6 +10,7 @@ import FeaturesSection from "./Components/Home/FeaturesSection/FeaturesSection";
 import OurStorySection from "./Components/Home/OurStorySection/OurStorySection";
 import BlogSection from "./Components/Home/BlogSection/BlogSection";
 import SubscribeSection from "./Components/Home/SubscribeSection/SubscribeSection";
+import CountrySelectorSection from "./Components/Home/CountrySelectorSection/CountrySelectorSection";
 
 export default function Home() {
   return (
@@ -32,6 +33,9 @@ export default function Home() {
       {/* Popular Destinations Section */}
       <PopularDestinationsSection />
 
+      {/* Country Selector Section */}
+      <CountrySelectorSection />
+
       {/* Review Section  */}
       <ReviewSection />
 
@@ -46,6 +50,8 @@ export default function Home() {
 
       {/* Subscribe Section */}
       <SubscribeSection />
+
+      
     </div>
   );
 }
