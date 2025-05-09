@@ -21,7 +21,7 @@ const KeyInfo = ({ tour }) => {
 
   const { duration, maxPeople, minAge, pickup } = tour.keyInfo;
   return (
-    <div className="w-full bg-[#f8fcfc] rounded-md p-4 md:p-6 my-6 md:my-8">
+    <div className="w-full rounded-md p-4 md:p-6 my-6 md:my-8">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
         <div className="flex items-center gap-3">
           <div className="text-[#D0A148] text-2xl">
@@ -29,7 +29,7 @@ const KeyInfo = ({ tour }) => {
           </div>
           <div>
             <h4 className="font-semibold text-[#D0A148] text-lg">Duration</h4>
-            <p className="text-gray-700">{duration}</p>
+            <p className="text-white">{duration}</p>
           </div>
         </div>
 
@@ -39,7 +39,7 @@ const KeyInfo = ({ tour }) => {
           </div>
           <div>
             <h4 className="font-semibold text-[#D0A148] text-lg">Max People</h4>
-            <p className="text-gray-700">{maxPeople}</p>
+            <p className="text-white">{maxPeople}</p>
           </div>
         </div>
 
@@ -49,7 +49,7 @@ const KeyInfo = ({ tour }) => {
           </div>
           <div>
             <h4 className="font-semibold text-[#D0A148] text-lg">Min Age</h4>
-            <p className="text-gray-700">{minAge}</p>
+            <p className="text-white">{minAge}</p>
           </div>
         </div>
 
@@ -59,7 +59,7 @@ const KeyInfo = ({ tour }) => {
           </div>
           <div>
             <h4 className="font-semibold text-[#D0A148] text-lg">Pickup</h4>
-            <p className="text-gray-700">{pickup}</p>
+            <p className="text-white">{pickup}</p>
           </div>
         </div>
       </div>

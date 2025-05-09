@@ -47,7 +47,7 @@ const DiscoveryCard = ({ card }) => {
             </del>
           </div>
           <Link
-            href={`/card-details/${card.id || card}`}
+            href={`/packages/${card.id || card}`}
             className="btn-primary px-4 py-1.5 text-sm"
           >
             Explore

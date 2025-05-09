@@ -29,7 +29,7 @@ const TourPlan = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
   return (
-    <div>
+    <div className="text-[#D0A148]">
       <h2 className="text-3xl md:text-4xl font-bold mb-6">Tour Plan</h2>
       <div className="space-y-4">
         {tourData.map((item, index) => (
@@ -49,7 +49,7 @@ const TourPlan = () => {
               )}
             </div>
             {activeIndex === index && (
-              <div className="px-8 pb-6 text-base text-[#444]">
+              <div className="px-8 pb-6 text-base text-[#D0A148]">
                 {item.details}
               </div>
             )}

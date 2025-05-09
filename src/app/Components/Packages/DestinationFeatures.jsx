@@ -28,11 +28,11 @@ const DestinationFeatures = ({ type, tour }) => {
 
   return (
     <div className="mt-5 md:mt-7 flex flex-col gap-3">
-      <h6 className="text-xl md:text-2xl font-bold mb-2">{title}</h6>
+      <h6 className="text-xl text-[#FFF] md:text-2xl font-bold mb-2">{title}</h6>
       {highlights.map((highlight, index) => (
         <div key={index} className="flex items-center gap-2">
-          <div className="w-3 h-3 rounded-full bg-[#B82525]"></div>
-          <p className="text-base text-[#444]">
+          <div className="w-3 h-3 rounded-full bg-[#D0A148]"></div>
+          <p className="text-base text-[#FFF]">
             <span className="font-semibold">{highlight.title}:</span>{" "}
             {highlight.description}
           </p>

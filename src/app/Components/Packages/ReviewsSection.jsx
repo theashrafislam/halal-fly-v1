@@ -86,17 +86,17 @@ const ReviewsSection = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
         {/* Overall Rating */}
-        <div className="bg-white p-6 rounded-lg shadow-sm">
+        <div className="p-6 rounded-lg shadow-sm">
           <div className="flex items-center mb-4">
-            <div className="text-4xl font-bold text-[#E91E63] mr-2">
+            <div className="text-4xl font-bold text-[#D0A148] mr-2">
               {overallRating}
-              <span className="text-lg text-gray-500 font-normal">/5</span>
+              <span className="text-lg text-[#D0A148] font-normal">/5</span>
             </div>
-            <div className="flex text-yellow-400 ml-2">
+            <div className="flex text-[#D0A148] ml-2">
               {renderStars(Math.round(overallRating))}
             </div>
           </div>
-          <p className="text-gray-500 text-sm">
+          <p className="text-[#D0A148] text-sm">
             Based on {totalReviews} reviews
           </p>
         </div>
@@ -124,11 +124,11 @@ const ReviewsSection = () => {
 
       {/* Review List */}
       <div className="mb-8">
-        <p className="text-gray-600 mb-6">
+        <p className="text-[#D0A148] mb-6">
           Showing 1-{shownReviews} of {totalReviews} reviews
         </p>
 
-        <div className="space-y-8">
+        <div className="space-y-8 text-[#D0A148]">
           {reviews.map((review) => (
             <div key={review.id} className="border-b pb-8">
               <div className="flex items-start mb-4">
@@ -148,7 +148,7 @@ const ReviewsSection = () => {
                       <FaReply className="mr-1" /> Reply
                     </button>
                   </div>
-                  <p className="text-gray-500 text-sm mb-2">{review.date}</p>
+                  <p className="text-[#D0A148] text-sm mb-2">{review.date}</p>
                 </div>
               </div>
 
@@ -157,7 +157,7 @@ const ReviewsSection = () => {
                 {Object.entries(review.ratings).map(
                   ([category, rating], idx) => (
                     <div key={idx} className="flex items-center">
-                      <span className="text-sm text-gray-600 mr-2 capitalize">
+                      <span className="text-sm text-[#D0A148] mr-2 capitalize">
                         {category}:
                       </span>
                       <div className="flex">{renderStars(rating)}</div>
@@ -166,7 +166,7 @@ const ReviewsSection = () => {
                 )}
               </div>
 
-              <p className="text-gray-600">{review.comment}</p>
+              <p className="text-[#D0A148]">{review.comment}</p>
             </div>
           ))}
         </div>

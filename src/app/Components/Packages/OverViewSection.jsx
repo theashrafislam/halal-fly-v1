@@ -5,7 +5,7 @@ const OverViewSection = ({ tour }) => {
     return (
       <div className="flex flex-col gap-4 sm:gap-5 mb-8 sm:mb-10 px-2 sm:px-4 md:px-6 lg:px-0">
         <h2 className="text-3xl md:text-4xl font-bold mb-2">Overview</h2>
-        <div className="text-[#444] space-y-4 text-sm sm:text-base leading-relaxed">
+        <div className="text-[#FFF] space-y-4 text-sm sm:text-base leading-relaxed">
           <p>No overview available</p>
         </div>
       </div>
@@ -17,8 +17,8 @@ const OverViewSection = ({ tour }) => {
 
   return (
     <div className="flex flex-col gap-4 sm:gap-5 mb-8 sm:mb-10 px-2 sm:px-4 md:px-6 lg:px-0">
-      <h2 className="text-3xl md:text-4xl font-bold mb-2">Overview</h2>
-      <div className="text-[#444] space-y-4 text-sm sm:text-base leading-relaxed">
+      <h2 className="text-3xl text-[#D0A148] md:text-4xl font-bold mb-2">Overview</h2>
+      <div className="text-[#FFF] space-y-4 text-sm sm:text-base leading-relaxed">
         {paragraphs.length > 0 ? (
           paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)
         ) : (

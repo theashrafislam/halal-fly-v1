@@ -26,18 +26,18 @@ const IncludeExclude = ({ tour }) => {
   const { included, excluded } = tour.includeExclude;
 
   return (
-    <div className="py-8 md:py-12 lg:py-16">
-      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
+    <div className="py-8 md:py-12 lg:py-16 border-y-2 border-[#E6E6E6]">
+      <h6 className="text-2xl text-[#D0A148] md:text-3xl lg:text-4xl font-bold mb-6">
         Included/Excluded
       </h6>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         <div className="flex flex-col gap-3">
           {included.map((item, index) => (
             <p key={index} className="text-base flex items-center gap-2">
-              <span className="text-[#00BB98] flex-shrink-0">
+              <span className="text-[#05977C] flex-shrink-0">
                 <FaCheck size={18} />
               </span>
-              <span className="text-[#444]">{item}</span>
+              <span className="text-[#FFFFFF]">{item}</span>
             </p>
           ))}
         </div>
@@ -45,10 +45,10 @@ const IncludeExclude = ({ tour }) => {
         <div className="flex flex-col gap-3">
           {excluded.map((item, index) => (
             <p key={index} className="text-base flex items-center gap-2">
-              <span className="text-[#B82525] flex-shrink-0">
+              <span className="text-[#E64251] flex-shrink-0">
                 <IoMdClose size={20} />
               </span>
-              <span className="text-[#444]">{item}</span>
+              <span className="text-[#FFFFFF]">{item}</span>
             </p>
           ))}
         </div>

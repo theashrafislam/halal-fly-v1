@@ -56,7 +56,7 @@ const PackagesDetailsHeroSection = () => {
   }
 
   return (
-    <div className="">
+    <div className="bg-[#171717]">
       <div className="bg-[#1A1A3D]">
         {/* content  */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 md:pt-16 flex flex-col md:flex-row md:items-start md:justify-between pb-8 md:pb-12">
@@ -135,11 +135,11 @@ const PackagesDetailsHeroSection = () => {
                   </clipPath>
                 </defs>
               </svg>
-              <span className="text-base font-bold text-[#444]">From</span>
+              <span className="text-base font-bold text-[#D0A148]">From</span>
             </p>
 
             <p className="flex items-center gap-3">
-              <span className="text-[32px] font-bold text-[#00BB98]">
+              <span className="text-[32px] font-bold text-[#D0A148]">
                 ${tour.discountedPrice.toFixed(2)}
               </span>
               {tour.price !== tour.discountedPrice && (
@@ -161,7 +161,7 @@ const PackagesDetailsHeroSection = () => {
                 }}
                 className={`py-3 sm:py-4 px-3 sm:px-7 text-sm sm:text-base cursor-pointer ${
                   bookingFourm
-                    ? "border-b-2 border-[#00BB98] text-[#00BB98] font-semibold"
+                    ? "border-b-2 border-[#D0A148] text-[#D0A148] font-semibold"
                     : ""
                 }`}
               >
