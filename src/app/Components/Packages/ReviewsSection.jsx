@@ -84,13 +84,13 @@ const ReviewsSection = () => {
     <section className="mb-12">
       <h2 className="text-2xl font-bold mb-8">Reviews</h2>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10 py-6 border-y-2 border-[#D0A148]">
         {/* Overall Rating */}
         <div className="p-6 rounded-lg shadow-sm">
           <div className="flex items-center mb-4">
             <div className="text-4xl font-bold text-[#D0A148] mr-2">
               {overallRating}
-              <span className="text-lg text-[#D0A148] font-normal">/5</span>
+              <span className="text-lg text-white font-normal">/5</span>
             </div>
             <div className="flex text-[#D0A148] ml-2">
               {renderStars(Math.round(overallRating))}
@@ -107,7 +107,7 @@ const ReviewsSection = () => {
             <div key={index} className="flex flex-col">
               <div className="flex justify-between mb-1">
                 <span className="text-sm text-gray-600">{category.name}</span>
-                <span className="text-sm text-gray-600">
+                <span className="text-sm text-[#D0A148]">
                   {category.rating}/5
                 </span>
               </div>
