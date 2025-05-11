@@ -91,7 +91,7 @@ const ReviewsSection = () => {
   };
 
   return (
-    <section className="mb-12 border-b-2 border-[#D0A148]">
+    <section className="mb-12">
       <h2 className="text-2xl font-bold mb-8">Reviews</h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10 py-6 border-y-2 border-[#D0A148]">
@@ -185,7 +185,7 @@ const ReviewsSection = () => {
         </button>
       </div>
       {/* Leave A Reply  */}
-      <div>
+      <div className="border-t-2 pt-10 border-[#D0A148]">
         <LeaveAreply />
       </div>
     </section>
