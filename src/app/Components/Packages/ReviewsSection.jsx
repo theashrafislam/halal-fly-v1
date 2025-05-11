@@ -149,7 +149,7 @@ const ReviewsSection = () => {
                   width={48}
                   height={48}
                   alt="profile image"
-                  className="object-cover w-full h-full rounded-full"
+                  className="object-cover w-full h-full  rounded-full"
                 />
               </div>
               <div className="p-6 rounded-lg bg-[#FFF] w-full space-y-1">
@@ -182,7 +182,7 @@ const ReviewsSection = () => {
       </div>
 
       {/* Add Review Button */}
-      <div className="text-start pb-14">
+      <div className="text-center lg:text-start pb-14">
         <button className="border border-[#E91E63] text-[#E91E63] px-6 py-2 rounded-md hover:bg-[#E91E63] hover:text-white transition-colors">
           Write Review
         </button>
