@@ -1,8 +1,10 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
-import { FaStar, FaRegStar, FaReply } from "react-icons/fa";
+import React from "react";
+import { FaStar, FaRegStar } from "react-icons/fa";
+import { MdOutlineCalendarMonth, MdReply } from "react-icons/md";
+import LeaveAreply from "./LeaveAreply";
 
 const ReviewsSection = () => {
   // Sample data for reviews
@@ -67,6 +69,14 @@ const ReviewsSection = () => {
     },
   ];
 
+  const ratings = [
+    { category: 'Location', rating: 5 },
+    { category: 'Amenities', rating: 4 },
+    { category: 'Services', rating: 3 },
+    { category: 'Price', rating: 2 },
+    { category: 'Tours', rating: 1 },
+  ];
+
   // Function to render stars based on rating
   const renderStars = (rating) => {
     const stars = [];
@@ -81,7 +91,7 @@ const ReviewsSection = () => {
   };
 
   return (
-    <section className="mb-12">
+    <section className="mb-12 border-b-2 border-[#D0A148]">
       <h2 className="text-2xl font-bold mb-8">Reviews</h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10 py-6 border-y-2 border-[#D0A148]">
@@ -123,57 +133,60 @@ const ReviewsSection = () => {
         <p className="text-[#D0A148] mb-6">
           Showing 1-{shownReviews} of {totalReviews} reviews
         </p>
-        
 
-        {/* <div className="space-y-8 text-[#D0A148]">
-          {reviews.map((review) => (
-            <div key={review.id} className="border-b pb-8">
-              <div className="flex items-start mb-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                  <Image
-                    src={review.avatar}
-                    alt={review.name}
-                    width={48}
-                    height={48}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <div className="flex-1">
-                  <div className="flex justify-between">
-                    <h4 className="font-semibold">{review.name}</h4>
-                    <button className="text-[#E91E63] text-sm flex items-center">
-                      <FaReply className="mr-1" /> Reply
-                    </button>
-                  </div>
-                  <p className="text-[#D0A148] text-sm mb-2">{review.date}</p>
-                </div>
+
+        {/* review card  */}
+
+        <div className="">
+          {[1, 2, 3].map((item, index) => (
+            <div key={index} className="flex gap-5 items-start mb-4">
+              <div className="w-20 h-20">
+                <Image
+                  src="/hero-section.jpg"
+                  width={48}
+                  height={48}
+                  alt="profile image"
+                  className="object-cover w-full h-full rounded-full"
+                />
               </div>
-
-              
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-4">
-                {Object.entries(review.ratings).map(
-                  ([category, rating], idx) => (
-                    <div key={idx} className="flex items-center">
-                      <span className="text-sm text-[#D0A148] mr-2 capitalize">
-                        {category}:
-                      </span>
-                      <div className="flex">{renderStars(rating)}</div>
+              <div className="p-6 rounded-lg bg-[#FFF] w-full space-y-1">
+                <div className="flex items-center justify-between">
+                  <p className="text-[#D0A148] text-base font-bold">Will Smith</p>
+                  <p className="flex items-center gap-1 text-[#B82525]">
+                    <MdReply />
+                    <span>reply</span>
+                  </p>
+                </div>
+                <p className="flex items-center gap-2">
+                  <MdOutlineCalendarMonth />
+                  <span className="text-[#999]">Dec 14, 2022 at 12:00pm</span>
+                </p>
+                <div className="flex items-center gap-5 flex-wrap">
+                  {ratings.map((item, idx) => (
+                    <div key={idx} className="p-2">
+                      <p className="text-[#444] text-sm">{item.category}</p>
+                      <div className="flex text-yellow-400">
+                        {renderStars(Math.round(item.rating))}
+                      </div>
                     </div>
-                  )
-                )}
+                  ))}
+                </div>
+                <p className="text-base text-[#444]">What a nice article. It keeps me reading more and more!</p>
               </div>
-
-              <p className="text-[#D0A148]">{review.comment}</p>
             </div>
           ))}
-        </div> */}
+        </div>
       </div>
 
       {/* Add Review Button */}
-      <div className="text-center">
+      <div className="text-start pb-4">
         <button className="border border-[#E91E63] text-[#E91E63] px-6 py-2 rounded-md hover:bg-[#E91E63] hover:text-white transition-colors">
           Write Review
         </button>
+      </div>
+      {/* Leave A Reply  */}
+      <div>
+        <LeaveAreply />
       </div>
     </section>
   );
