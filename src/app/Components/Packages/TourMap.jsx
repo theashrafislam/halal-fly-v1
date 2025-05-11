@@ -15,7 +15,7 @@ L.Icon.Default.mergeOptions({
 
 const TourMap = () => {
   return (
-    <div className="py-10 md:py-16 border-b-2 border-[#E6E6E6]">
+    <div className="py-10 md:py-16">
       <h6 className="text-3xl md:text-4xl font-bold pb-5">Tour Map</h6>
       <div className="h-[300px] md:h-[400px] lg:h-[500px] w-full rounded-xl overflow-hidden">
         <MapContainer

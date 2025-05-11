@@ -86,19 +86,15 @@ const ReviewsSection = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10 py-6 border-y-2 border-[#D0A148]">
         {/* Overall Rating */}
-        <div className="p-6 rounded-lg shadow-sm">
-          <div className="flex items-center mb-4">
-            <div className="text-4xl font-bold text-[#D0A148] mr-2">
+        <div className="flex items-center justify-center">
+          <div className="w-full h-40 flex flex-col items-center justify-center  text-center">
+            <div className="text-4xl font-bold text-[#D0A148]">
               {overallRating}
               <span className="text-lg text-white font-normal">/5</span>
             </div>
-            <div className="flex text-[#D0A148] ml-2">
-              {renderStars(Math.round(overallRating))}
-            </div>
+            <p className="text-[#D0A148] text-base font-philosopher">Wonderful</p>
+            <p className="text-[#D0A148] text-base">8 verified reviews</p>
           </div>
-          <p className="text-[#D0A148] text-sm">
-            Based on {totalReviews} reviews
-          </p>
         </div>
 
         {/* Rating Categories */}
@@ -106,7 +102,7 @@ const ReviewsSection = () => {
           {categoryRatings.map((category, index) => (
             <div key={index} className="flex flex-col">
               <div className="flex justify-between mb-1">
-                <span className="text-sm text-gray-600">{category.name}</span>
+                <span className="text-sm text-[#FFF]">{category.name}</span>
                 <span className="text-sm text-[#D0A148]">
                   {category.rating}/5
                 </span>
@@ -127,8 +123,9 @@ const ReviewsSection = () => {
         <p className="text-[#D0A148] mb-6">
           Showing 1-{shownReviews} of {totalReviews} reviews
         </p>
+        
 
-        <div className="space-y-8 text-[#D0A148]">
+        {/* <div className="space-y-8 text-[#D0A148]">
           {reviews.map((review) => (
             <div key={review.id} className="border-b pb-8">
               <div className="flex items-start mb-4">
@@ -152,7 +149,7 @@ const ReviewsSection = () => {
                 </div>
               </div>
 
-              {/* Category Ratings */}
+              
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-4">
                 {Object.entries(review.ratings).map(
                   ([category, rating], idx) => (
@@ -169,7 +166,7 @@ const ReviewsSection = () => {
               <p className="text-[#D0A148]">{review.comment}</p>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
 
       {/* Add Review Button */}
