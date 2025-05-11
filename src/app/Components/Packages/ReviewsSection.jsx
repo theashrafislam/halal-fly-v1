@@ -5,6 +5,9 @@ import React from "react";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { MdOutlineCalendarMonth, MdReply } from "react-icons/md";
 import LeaveAreply from "./LeaveAreply";
+import { TfiArrowCircleLeft, TfiArrowCircleRight } from "react-icons/tfi";
+import DiscoveryCard from "../Home/DiscoverWeeklySection/DiscoveryCard";
+import SaudiPackagesSection from "./SaudiPackagesSection";
 
 const ReviewsSection = () => {
   // Sample data for reviews
@@ -179,14 +182,19 @@ const ReviewsSection = () => {
       </div>
 
       {/* Add Review Button */}
-      <div className="text-start pb-4">
+      <div className="text-start pb-14">
         <button className="border border-[#E91E63] text-[#E91E63] px-6 py-2 rounded-md hover:bg-[#E91E63] hover:text-white transition-colors">
           Write Review
         </button>
       </div>
       {/* Leave A Reply  */}
-      <div className="border-t-2 pt-10 border-[#D0A148]">
+      <div className="border-t-2 pt-10 pb-14 border-[#D0A148]">
         <LeaveAreply />
+      </div>
+
+      {/* Saudi Packages We Offer */}
+      <div className="pt-14 border-t-2 border-[#D0A148]">
+       <SaudiPackagesSection />
       </div>
     </section>
   );
