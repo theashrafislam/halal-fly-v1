@@ -87,8 +87,8 @@ const ToursLists = () => {
                                             onClick={() => setActiveTab(tab.name)}
                                             className={`flex items-center gap-2 px-2 md:px-4 py-2 rounded-full border transition text-sm sm:text-base
                                             ${activeTab === tab.name
-                                                    ? "bg-[#A51CBA] text-white font-semibold"
-                                                    : "bg-[#F5F5F5] text-[#2D3E50] hover:bg-[#A51CBA] hover:text-[#FFFFFF]"
+                                                    ? "bg-[#D0A148] text-white font-semibold"
+                                                    : "bg-[#F5F5F5] text-[#2D3E50] hover:bg-[#D0A148] hover:text-[#FFFFFF]"
                                                 }`}
                                         >
                                             {tab.icon}
@@ -150,7 +150,7 @@ const ToursLists = () => {
 
                                         {/* Search Button */}
                                         <div className='flex justify-end w-full'>
-                                            <button className="bg-[#A51CBA] transition-all duration-300 flex items-center justify-center gap-1 text-[#FFFFFF] px-6 py-3 rounded-md font-semibold w-full md:w-auto">
+                                            <button className="bg-[#D0A148] transition-all duration-300 flex items-center justify-center gap-1 text-[#FFFFFF] px-6 py-3 rounded-md font-semibold w-full md:w-auto">
                                                 <CiSearch className='text-2xl' />
                                                 <span>Search</span>
                                             </button>
