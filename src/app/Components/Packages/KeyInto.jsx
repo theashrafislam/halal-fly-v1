@@ -19,7 +19,7 @@ const KeyInfo = ({ tour }) => {
     );
   }
 
-  const { duration, maxPeople, minAge, pickup } = tour.keyInfo;
+  const { duration, maxPeople, minAge, pickup } = tour;
   return (
     <div className="w-full rounded-md p-4 md:p-6 my-6 md:my-8">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">

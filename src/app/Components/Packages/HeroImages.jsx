@@ -1,7 +1,8 @@
 import React from "react";
 
-const HeroImages = ({ tour }) => {
-  if (!tour) {
+const HeroImages = ({ image }) => {
+
+  if (!image) {
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
         <div className="flex flex-col md:flex-row gap-2 md:gap-4">
@@ -18,7 +19,7 @@ const HeroImages = ({ tour }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
       <div className="flex flex-col md:flex-row gap-2 md:gap-4">
-        {tour.images.map((src, index) => (
+        {image.map((src, index) => (
           <div
             key={index}
             className="flex-1 overflow-hidden rounded-xl shadow-md border border-gray-100"

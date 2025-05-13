@@ -12,27 +12,30 @@ import ReviewsSection from "@/app/Components/Packages/ReviewsSection";
 import TourPlan from "@/app/Components/Packages/TourPlan";
 import TourMap from "@/app/Components/Packages/TourMap";
 import { fetchTourById } from "@/utils/api";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPackageById } from "@/features/packages/packageSlice";
+import { useParams } from "next/navigation";
 
-const PackageDetails = ({ params }) => {
-    const { id } = params;
-    console.log(id);
+const PackageDetails = () => {
+    const { id } = useParams();
     const [tour, setTour] = useState(null);
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
 
+    const dispatch = useDispatch();
+
+    // Use package from the slice
+    const { package: singlePackage, loading, error } = useSelector(
+        (state) => state.packages
+    );
+
+    // Fetch the package by ID when the component mounts
     useEffect(() => {
-        const loadTourData = async () => {
-            try {
-                const tourData = await fetchTourById(id);
-                setTour(tourData);
-            } catch (error) {
-                console.error("Error loading tour data:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
+        if (id) {
+            dispatch(fetchPackageById(id));
+        }
+    }, [id, dispatch]);
 
-        loadTourData();
-    }, [id]);
+    console.log(singlePackage);
 
     if (loading) {
         return (
@@ -42,21 +45,22 @@ const PackageDetails = ({ params }) => {
         );
     }
 
-    if (!tour) {
-        return (
-            <div className="flex items-center justify-center min-h-screen">
-                <div className="text-2xl font-semibold text-red-500">
-                    Tour not found
-                </div>
-            </div>
-        );
-    }
+    // if (!singlePackage) {
+    //     return (
+    //         <div className="flex items-center justify-center min-h-screen">
+    //             <div className="text-2xl font-semibold text-red-500">
+    //                 Tour not found
+    //             </div>
+    //         </div>
+    //     );
+    // }
+
 
     return (
         <div>
             <Head>
-                <title>{tour.title} | Halal Fly Fig</title>
-                <meta name="description" content={tour.overview.substring(0, 160)} />
+                {/* <title>{tour.title} | Halal Fly Fig</title> */}
+                {/* <meta name="description" content={tour.overview.substring(0, 160)} /> */}
             </Head>
             {/* route section  */}
             <div className="py-3 bg-[#000000] md:py-4 lg:py-6 ">
@@ -65,32 +69,34 @@ const PackageDetails = ({ params }) => {
                         <Link href="/">
                             Home
                         </Link>
-                        <LiaAngleRightSolid className="text-white"/>
+                        <LiaAngleRightSolid className="text-white" />
                         <Link
                             href="/tour-lists"
                         >
                             Tour
                         </Link>
-                        <LiaAngleRightSolid className="text-white"/>
-                        <span>{tour.title}</span>
+                        <LiaAngleRightSolid className="text-white" />
+                        <span>{singlePackage?.nameEn}</span>
                     </h5>
                 </div>
             </div>
 
             {/* hero section  */}
-            <PackagesDetailsHeroSection />
+            <PackagesDetailsHeroSection tour={singlePackage} loading={loading}/>
 
             <div className="bg-[#171717]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 lg:py-12">
                     <div>
                         {/* Makkah Highlights */}
-                        <DestinationFeatures type="makkah" tour={tour} />
+                        <DestinationFeatures type="makkah" tour={singlePackage} />
 
                         {/* Madinah Highlights */}
-                        <DestinationFeatures type="madinah" tour={tour} />
+                        <DestinationFeatures type="madinah" tour={singlePackage} />
+
+                        
 
                         {/* Included/Excluded */}
-                        <IncludeExclude tour={tour} />
+                        <IncludeExclude tour={singlePackage} />
 
                         {/* Tour Plan */}
                         <TourPlan />

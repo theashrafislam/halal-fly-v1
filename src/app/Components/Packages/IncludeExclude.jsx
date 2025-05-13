@@ -23,7 +23,14 @@ const IncludeExclude = ({ tour }) => {
     );
   }
 
-  const { included, excluded } = tour.includeExclude;
+  // Convert to array if it's a string with newlines
+  const included = Array.isArray(tour.included)
+    ? tour.included
+    : tour.included?.split("\n") || [];
+
+  const notIncluded = Array.isArray(tour.notIncluded)
+    ? tour.notIncluded
+    : tour.notIncluded?.split("\n") || [];
 
   return (
     <div className="py-8 md:py-12 lg:py-16 border-y-2 border-[#E6E6E6]">
@@ -37,18 +44,18 @@ const IncludeExclude = ({ tour }) => {
               <span className="text-[#05977C] flex-shrink-0">
                 <FaCheck size={18} />
               </span>
-              <span className="text-[#FFFFFF]">{item}</span>
+              <span className="text-[#FFFFFF]">{item.trim()}</span>
             </p>
           ))}
         </div>
 
         <div className="flex flex-col gap-3">
-          {excluded.map((item, index) => (
+          {notIncluded.map((item, index) => (
             <p key={index} className="text-base flex items-center gap-2">
               <span className="text-[#E64251] flex-shrink-0">
                 <IoMdClose size={20} />
               </span>
-              <span className="text-[#FFFFFF]">{item}</span>
+              <span className="text-[#FFFFFF]">{item.trim()}</span>
             </p>
           ))}
         </div>

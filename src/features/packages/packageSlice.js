@@ -1,37 +1,61 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-// Thunk for fetching packages
+// All packages
 export const fetchPackages = createAsyncThunk(
-    'packages/fetchPackages',
-    async () => {
-        const res = await fetch('https://halal-fly-backend.vercel.app/api/v1/packages')
-        const data = await res.json()
-        return data?.data || []
-    }
+  'packages/fetchPackages',
+  async () => {
+    const res = await fetch('https://halal-fly-backend.vercel.app/api/v1/packages')
+    const data = await res.json()
+    return data?.data || []
+  }
+)
+
+// Single package
+export const fetchPackageById = createAsyncThunk(
+  'packages/fetchPackageById',
+  async (id) => {
+    const res = await fetch(`https://halal-fly-backend.vercel.app/api/v1/packages/${id}`)
+    const data = await res.json()
+    return data;
+  }
 )
 
 const packageSlice = createSlice({
-    name: 'packages',
-    initialState: {
-        items: [],
-        loading: false,
-        error: null,
-    },
-    extraReducers: (builder) => {
-        builder
-            .addCase(fetchPackages.pending, (state) => {
-                state.loading = true
-                state.error = null
-            })
-            .addCase(fetchPackages.fulfilled, (state, action) => {
-                state.loading = false
-                state.items = action.payload
-            })
-            .addCase(fetchPackages.rejected, (state, action) => {
-                state.loading = false
-                state.error = action.error.message
-            })
-    },
+  name: 'packages',
+  initialState: {
+    items: [],
+    package: null,
+    loading: false,
+    error: null,
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchPackages.pending, (state) => {
+        state.loading = true
+        state.error = null
+      })
+      .addCase(fetchPackages.fulfilled, (state, action) => {
+        state.loading = false
+        state.items = action.payload
+      })
+      .addCase(fetchPackages.rejected, (state, action) => {
+        state.loading = false
+        state.error = action.error.message
+      })
+      .addCase(fetchPackageById.pending, (state) => {
+        state.loading = true
+        state.error = null
+        state.package = null
+      })
+      .addCase(fetchPackageById.fulfilled, (state, action) => {
+        state.loading = false
+        state.package = action.payload
+      })
+      .addCase(fetchPackageById.rejected, (state, action) => {
+        state.loading = false
+        state.error = action.error.message
+      })
+  },
 })
 
-export default packageSlice.reducer
+export default packageSlice.reducer;

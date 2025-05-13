@@ -12,30 +12,59 @@ import { fetchTourById } from "@/utils/api";
 import LoadingSpinner from "../Common/LoadingSpinner";
 import OverViewSection from "./OverViewSection";
 import KeyInfo from "./KeyInto";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPackageById } from "@/features/packages/packageSlice";
 
-const PackagesDetailsHeroSection = () => {
-  const params = useParams();
-  const { id } = params;
-  const [tour, setTour] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const loadTourData = async () => {
-      try {
-        const tourData = await fetchTourById(id);
-        setTour(tourData);
-      } catch (error) {
-        console.error("Error loading tour data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadTourData();
-  }, [id]);
-  // tabs state
+const PackagesDetailsHeroSection = ({tour, loading}) => {
+  // console.log(tour);
+  // const params = useParams();
+  // const { id } = params;
+  // const [tour, setTour] = useState(null);
   const [bookingFourm, setBookingFourm] = useState(true);
   const [enquiryForum, setEnquiryForum] = useState(false);
+  // const [loading, setLoading] = useState(true);
+
+  // const dispatch = useDispatch();
+
+  // Use package from the slice
+  // const { package: singlePackage, loading, error } = useSelector(
+  //   (state) => state.packages
+  // );
+
+  // // Fetch the package by ID when the component mounts
+  // useEffect(() => {
+  //   if (id) {
+  //     dispatch(fetchPackageById(id));
+  //   }
+  // }, [id, dispatch]);
+
+  // console.log(singlePackage);
+
+
+  // Fetch the package by ID when the component mounts
+  // useEffect(() => {
+  //   if (id) {
+  //     dispatch(fetchPackageById(id));
+  //   }
+  // }, [id, dispatch]);
+
+  // useEffect(() => {
+  //   const loadTourData = async () => {
+  //     try {
+  //       const tourData = await fetchTourById(id);
+  //       setTour(tourData);
+  //     } catch (error) {
+  //       console.error("Error loading tour data:", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   loadTourData();
+  // }, [id]);
+  // tabs state
+
+
 
   if (loading) {
     return (
@@ -62,19 +91,19 @@ const PackagesDetailsHeroSection = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 md:pt-16 flex flex-col md:flex-row md:items-start md:justify-between pb-8 md:pb-12">
           <div className="mb-6 md:mb-0 text-[#D0A148]">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              {tour.title}
+              {tour?.nameEn}
             </h1>
             <div className="flex flex-wrap items-center gap-4 md:gap-6">
               <p className="flex items-center gap-1 text-base">
                 <CiLocationOn className="text-[#00BB98] font-bold" />
-                <span>{tour.location}</span>
+                <span>{tour?.location}</span>
               </p>
               <p className="flex items-center gap-1 text-base">
                 <LuEye className="text-[#00BB98] font-bold" />
-                <span>{tour.views}</span>
+                <span>000</span>
               </p>
               <p className="flex items-center gap-2 text-[#FFC83E] text-2xl">
-                {[...Array(Math.floor(tour.rating))].map((_, i) => (
+                {[...Array(Math.floor(tour.rating || 3))].map((_, i) => (
                   <TiStarFullOutline key={i} />
                 ))}
               </p>
@@ -95,7 +124,8 @@ const PackagesDetailsHeroSection = () => {
         </div>
 
         {/* Images  */}
-        <HeroImages tour={tour} />
+        <HeroImages image={tour?.imagesGallery} />
+      
 
         {/* key info and booking  */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between pb-16 relative">
@@ -140,11 +170,11 @@ const PackagesDetailsHeroSection = () => {
 
             <p className="flex items-center gap-3">
               <span className="text-[32px] font-bold text-[#D0A148]">
-                ${tour.discountedPrice.toFixed(2)}
+                {/* ${tour.discountedPrice.toFixed(2)} */}
               </span>
               {tour.price !== tour.discountedPrice && (
                 <span className="text-[#999] line-through">
-                  ${tour.price.toFixed(2)}
+                  {/* ${tour.price.toFixed(2)} */}
                 </span>
               )}
             </p>
@@ -159,11 +189,10 @@ const PackagesDetailsHeroSection = () => {
                   setEnquiryForum(false);
                   setBookingFourm(true);
                 }}
-                className={`py-3 sm:py-4 px-3 sm:px-7 text-sm sm:text-base cursor-pointer ${
-                  bookingFourm
+                className={`py-3 sm:py-4 px-3 sm:px-7 text-sm sm:text-base cursor-pointer ${bookingFourm
                     ? "border-b-2 border-[#D0A148] text-[#D0A148] font-semibold"
                     : ""
-                }`}
+                  }`}
               >
                 Booking Forum
               </button>
@@ -172,11 +201,10 @@ const PackagesDetailsHeroSection = () => {
                   setBookingFourm(false);
                   setEnquiryForum(true);
                 }}
-                className={`py-3 sm:py-4 px-3 sm:px-7 text-sm sm:text-base cursor-pointer ${
-                  enquiryForum
+                className={`py-3 sm:py-4 px-3 sm:px-7 text-sm sm:text-base cursor-pointer ${enquiryForum
                     ? "border-b-2 border-[#00BB98] text-[#00BB98] font-semibold"
                     : ""
-                }`}
+                  }`}
               >
                 Enquiry Forum
               </button>
@@ -221,11 +249,11 @@ const PackagesDetailsHeroSection = () => {
                       1
                     </div>
                     <p className="text-sm sm:text-base text-[#444]">
-                      Number ticket × ${tour.discountedPrice.toFixed(2)}
+                      {/* Number ticket × ${tour.discountedPrice.toFixed(2)} */}
                     </p>
                   </div>
                   <p className="text-sm sm:text-base font-semibold">
-                    Total = ${tour.discountedPrice.toFixed(2)}
+                    {/* Total = ${tour.discountedPrice.toFixed(2)} */}
                   </p>
                 </div>
 
