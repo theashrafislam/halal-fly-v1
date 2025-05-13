@@ -45,15 +45,15 @@ const PackageDetails = () => {
         );
     }
 
-    // if (!singlePackage) {
-    //     return (
-    //         <div className="flex items-center justify-center min-h-screen">
-    //             <div className="text-2xl font-semibold text-red-500">
-    //                 Tour not found
-    //             </div>
-    //         </div>
-    //     );
-    // }
+    if (!singlePackage) {
+        return (
+            <div className="flex items-center justify-center min-h-screen">
+                <div className="text-2xl font-semibold text-red-500">
+                    Tour not found
+                </div>
+            </div>
+        );
+    }
 
 
     return (
