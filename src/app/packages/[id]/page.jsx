@@ -35,7 +35,7 @@ const PackageDetails = () => {
         }
     }, [id, dispatch]);
 
-    console.log(singlePackage);
+    // console.log(singlePackage);
 
     if (loading) {
         return (

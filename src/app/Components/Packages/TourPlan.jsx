@@ -4,7 +4,6 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const TourPlan = ({itinerary}) => {
 
-  console.log(itinerary);
 
   const [activeIndex, setActiveIndex] = useState(null);
   
