@@ -99,7 +99,7 @@ const PackageDetails = () => {
                         <IncludeExclude tour={singlePackage} />
 
                         {/* Tour Plan */}
-                        <TourPlan />
+                        <TourPlan itinerary={singlePackage?.itinerary}/>
 
                         {/* Tour Map */}
                         <TourMap />
