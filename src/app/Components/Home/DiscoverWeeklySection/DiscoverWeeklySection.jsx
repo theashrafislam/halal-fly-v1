@@ -4,11 +4,23 @@ import React, { useState, useEffect } from "react";
 import LoadingSpinner from "../../Common/LoadingSpinner";
 import DiscoveryCard from "./DiscoveryCard";
 import { fetchAllTours } from "@/utils/api";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { fetchPackages } from "@/features/packages/packageSlice";
 
 const DiscoverWeeklySection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [tours, setTours] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  // api call using redux 
+  const dispatch = useAppDispatch()
+  const { items, error } = useAppSelector((state) => state.packages)
+
+  useEffect(() => {
+    dispatch(fetchPackages())
+  }, [dispatch]);
+
+  console.log(items);
 
   useEffect(() => {
     const loadTours = async () => {
@@ -42,6 +54,10 @@ const DiscoverWeeklySection = () => {
       setCurrentIndex(tours.length - cardsPerPage); // Loop to the end
     }
   };
+
+
+
+  if (error) return <p>Error: {error}</p>
 
   if (loading) {
     return (
