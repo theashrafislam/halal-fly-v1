@@ -41,9 +41,9 @@ const DiscoveryCard = ({ card }) => {
         </div>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1">
-            <p className="text-lg text-[#211F1F] font-bold">${card.price || "139.99"}</p>
+            <p className="text-lg text-[#211F1F] font-bold">€{card.price || "139.99"}</p>
             <del className="text-sm text-[#999]">
-              ${card.originalPrice || "190.00"}
+              €{card.originalPrice || "190.00"}
             </del>
           </div>
           <Link

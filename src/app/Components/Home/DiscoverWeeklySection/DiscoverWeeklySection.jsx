@@ -3,39 +3,20 @@
 import React, { useState, useEffect } from "react";
 import LoadingSpinner from "../../Common/LoadingSpinner";
 import DiscoveryCard from "./DiscoveryCard";
-import { fetchAllTours } from "@/utils/api";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { fetchPackages } from "@/features/packages/packageSlice";
 
 const DiscoverWeeklySection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [tours, setTours] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   // api call using redux 
   const dispatch = useAppDispatch()
-  const { items, error } = useAppSelector((state) => state.packages)
+  const { items, loading, error } = useAppSelector((state) => state.packages)
 
   useEffect(() => {
     dispatch(fetchPackages())
   }, [dispatch]);
 
-  console.log(items);
-
-  useEffect(() => {
-    const loadTours = async () => {
-      try {
-        const toursData = await fetchAllTours();
-        setTours(toursData || []);
-      } catch (error) {
-        console.error("Error loading tours:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadTours();
-  }, []);
 
   const cardsPerPage = 4;
 
@@ -43,7 +24,7 @@ const DiscoverWeeklySection = () => {
     if (currentIndex < tours.length - cardsPerPage) {
       setCurrentIndex(currentIndex + 1);
     } else {
-      setCurrentIndex(0); // Loop back to the beginning
+      setCurrentIndex(0);
     }
   };
 
@@ -51,7 +32,7 @@ const DiscoverWeeklySection = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
     } else {
-      setCurrentIndex(tours.length - cardsPerPage); // Loop to the end
+      setCurrentIndex(tours.length - cardsPerPage);
     }
   };
 
@@ -139,12 +120,24 @@ const DiscoverWeeklySection = () => {
               transform: `translateX(-${currentIndex * 25}%)`,
             }}
           >
-            {tours.map((tour, index) => (
+            {items?.packages?.map((pkg, index) => (
               <div
                 key={`desktop-${index}`}
                 className="w-1/2 lg:w-1/4 flex-shrink-0 px-3"
               >
                 <DiscoveryCard
+                  card={{
+                    id: pkg.id,
+                    title: pkg.nameEn || pkg.name,
+                    location: pkg.pickup,
+                    price: pkg.price,
+                    originalPrice: pkg.oldPrice,
+                    image: pkg.thumbnailUrl || "/hero-section.jpg",
+                    days: pkg.duration || 0,
+                    rating: pkg.rating || 0.0,
+                  }}
+                />
+                {/* <DiscoveryCard
                   card={{
                     id: tour.id,
                     title: tour.title,
@@ -160,7 +153,7 @@ const DiscoverWeeklySection = () => {
                       : 3,
                     rating: tour.rating,
                   }}
-                />
+                /> */}
               </div>
             ))}
           </div>
@@ -171,23 +164,18 @@ const DiscoverWeeklySection = () => {
 
         {/* Mobile cards - one per row, no slider */}
         <div className="grid grid-cols-1 gap-6 mb-12 md:hidden">
-          {tours.slice(0, 4).map((tour, index) => (
+          {items?.packages?.map((pkg, index) => (
             <div key={`mobile-${index}`} className="px-3">
               <DiscoveryCard
                 card={{
-                  id: tour.id,
-                  title: tour.title,
-                  location: tour.location,
-                  price: tour.discountedPrice,
-                  originalPrice: tour.price,
-                  image:
-                    tour.images && tour.images.length > 0
-                      ? tour.images[0]
-                      : "/hero-section.jpg",
-                  days: tour.keyInfo?.duration
-                    ? parseInt(tour.keyInfo.duration)
-                    : 3,
-                  rating: tour.rating,
+                  id: pkg.id,
+                  title: pkg.nameEn || pkg.name,
+                  location: pkg.pickup,
+                  price: pkg.price,
+                  originalPrice: pkg.oldPrice,
+                  image: pkg.thumbnailUrl || "/hero-section.jpg",
+                  days: pkg.duration || 0,
+                  rating: pkg.rating || 0.0,
                 }}
               />
             </div>

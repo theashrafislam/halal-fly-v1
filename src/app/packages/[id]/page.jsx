@@ -15,6 +15,7 @@ import { fetchTourById } from "@/utils/api";
 
 const PackageDetails = ({ params }) => {
     const { id } = params;
+    console.log(id);
     const [tour, setTour] = useState(null);
     const [loading, setLoading] = useState(true);
 
