@@ -17,6 +17,9 @@ import SubscribeSection from '../Components/Home/SubscribeSection/SubscribeSecti
 import DiscoveryCard from '../Components/Home/DiscoverWeeklySection/DiscoveryCard';
 import { fetchAllTours } from '@/utils/api';
 import Pagination from '../Components/Common/Pagination';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { fetchPackages } from '@/features/packages/packageSlice';
+import LoadingSpinner from '../Components/Common/LoadingSpinner';
 
 const ToursLists = () => {
 
@@ -24,7 +27,7 @@ const ToursLists = () => {
     const [activeTab, setActiveTab] = useState("Hotel");
     const [value, setValue] = useState(30);
     const [tours, setTours] = useState([]);
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
 
     const tabs = [
         { name: "Hotel", icon: <FaHotel /> },
@@ -34,20 +37,16 @@ const ToursLists = () => {
         { name: "Family Trip", icon: <FaUsers /> },
     ];
 
-    useEffect(() => {
-        const loadTours = async () => {
-            try {
-                const toursData = await fetchAllTours();
-                setTours(toursData || []);
-            } catch (error) {
-                console.error("Error loading tours:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
+    // api call using redux 
+    const dispatch = useAppDispatch()
+    const { items, loading, error } = useAppSelector((state) => state.packages)
 
-        loadTours();
-    }, []);
+    useEffect(() => {
+        dispatch(fetchPackages())
+    }, [dispatch]);
+
+
+    // console.log(items);
 
 
     const min = 30;
@@ -342,23 +341,24 @@ const ToursLists = () => {
                         <div className=''>
                             {/* card section  */}
                             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-                                {tours.map((tour, index) => (
+                                {loading && <div>
+                                    <div className="flex items-center justify-center min-h-screen">
+                                        <LoadingSpinner text="Loading tour details..." />
+                                    </div>
+
+                                </div>}
+                                {items?.packages?.map((pkg, index) => (
                                     <div key={index}>
                                         <DiscoveryCard
                                             card={{
-                                                id: tour.id,
-                                                title: tour.title,
-                                                location: tour.location,
-                                                price: tour.discountedPrice,
-                                                originalPrice: tour.price,
-                                                image:
-                                                    tour.images && tour.images.length > 0
-                                                        ? tour.images[0]
-                                                        : "/hero-section.jpg",
-                                                days: tour.keyInfo?.duration
-                                                    ? parseInt(tour.keyInfo.duration)
-                                                    : 3,
-                                                rating: tour.rating,
+                                                id: pkg.id,
+                                                title: pkg.nameEn || pkg.name,
+                                                location: pkg.pickup,
+                                                price: pkg.price,
+                                                originalPrice: pkg.oldPrice,
+                                                image: pkg.thumbnailUrl || "/hero-section.jpg",
+                                                days: pkg.duration || 0,
+                                                rating: pkg.rating || 0.0,
                                             }}
                                         />
                                     </div>
