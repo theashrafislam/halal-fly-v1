@@ -29,6 +29,10 @@ const ToursLists = () => {
     const [tours, setTours] = useState([]);
     // const [loading, setLoading] = useState(true);
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
+    const limit = 9;
+
     const tabs = [
         { name: "Hotel", icon: <FaHotel /> },
         { name: "Umrah", icon: <GiPrayer /> },
@@ -44,6 +48,17 @@ const ToursLists = () => {
     useEffect(() => {
         dispatch(fetchPackages())
     }, [dispatch]);
+
+    useEffect(() => {
+        if (Array.isArray(items?.packages)) {
+            setTotalPages(Math.ceil(items.packages.length / limit));
+        }
+    }, [items]);
+
+    const paginatedItems = Array.isArray(items?.packages)
+        ? items.packages.slice((currentPage - 1) * limit, currentPage * limit)
+        : [];
+
 
 
     // console.log(items);
@@ -69,7 +84,7 @@ const ToursLists = () => {
                         {/* header  */}
                         <div className='bg-[#FFF]'>
                             <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-2 md:gap-3 text-sm md:text-base text-[#1A1A3D] py-10 md:py-12 lg:py-24'>
-                                <p>Tours List</p>
+                                <p>Tours</p>
                                 <MdOutlineKeyboardArrowRight />
                             </div>
                         </div>
@@ -172,7 +187,7 @@ const ToursLists = () => {
                     {/* sort  header  */}
                     <div className='max-w-7xl text-[#D0A148] mx-auto mb-20 lg:flex flex-col lg:flex-row items-start lg:items-center justify-between pb-2 border-b-2 border-[#E6E6E6] hidden'>
                         <div className='flex flex-col lg:flex-row items-start lg:items-center gap-2'>
-                            <h5 className='text-[32px] font-bold'>10 Tours found</h5>
+                            <h5 className='text-[32px] font-bold'><span>{items?.packages?.length}</span> Tours found</h5>
                             <p className='text-sm'>Clear filter</p>
                         </div>
                         {/* advance search  btn  */}
@@ -208,7 +223,7 @@ const ToursLists = () => {
                     <div className='max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 pb-20'>
 
                         {/* sidebar content  */}
-                        <div className='w-full bg-[#FFF] text-[#111B19] lg:w-[60%] h-auto p-4 self-start border-2 rounded-xl border-[#E6E6E6] hidden lg:block'>
+                        <div className='w-full bg-[#FFF] text-[#111B19] lg:w-[30%] h-auto p-4 self-start border-2 rounded-xl border-[#E6E6E6] hidden lg:block'>
                             {/* search tour  */}
                             <div>
 
@@ -325,7 +340,7 @@ const ToursLists = () => {
                                     </div>
                                     {/* search btn  */}
                                     <div className='w-[100%] pt-5'>
-                                        <button className="bg-[#A51CBA] flex items-center justify-center gap-1 text-[#FFFFFF] py-3 rounded-md font-semibold w-full">
+                                        <button className="bg-[#D0A148] flex items-center justify-center gap-1 text-[#FFFFFF] py-3 rounded-md font-semibold w-full">
                                             <CiSearch className='text-2xl' />
                                             <span>Search</span>
                                         </button>
@@ -347,7 +362,7 @@ const ToursLists = () => {
                                     </div>
 
                                 </div>}
-                                {items?.packages?.map((pkg, index) => (
+                                {paginatedItems?.map((pkg, index) => (
                                     <div key={index}>
                                         <DiscoveryCard
                                             card={{
@@ -366,7 +381,11 @@ const ToursLists = () => {
                             </div>
                             {/* Pagination  */}
                             <div className='py-10'>
-                                <Pagination />
+                                <Pagination
+                                    currentPage={currentPage}
+                                    totalPages={totalPages}
+                                    onPageChange={(page) => setCurrentPage(page)}
+                                />
                             </div>
                         </div>
 
