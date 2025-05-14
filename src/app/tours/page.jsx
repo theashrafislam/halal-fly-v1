@@ -90,7 +90,7 @@ const ToursLists = () => {
                         </div>
 
                         {/* tabs section  */}
-                        <div className='md:absolute md:left-1/2 md:-translate-x-1/2 md:-bottom-32 w-full px-3'>
+                        <div className='md:absolute pt-10 md:pt-0 md:left-1/2 md:-translate-x-1/2 md:-bottom-32 w-full px-3'>
 
                             {/* Tabs */}
                             <div className="max-w-6xl mx-auto">
