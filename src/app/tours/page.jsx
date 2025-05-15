@@ -194,7 +194,7 @@ const ToursLists = () => {
                     {/* sort  header  */}
                     <div className='max-w-7xl text-[#D0A148] mx-auto mb-20 lg:flex flex-col lg:flex-row items-start lg:items-center justify-between pb-2 border-b-2 border-[#E6E6E6] hidden'>
                         <div className='flex flex-col lg:flex-row items-start lg:items-center gap-2'>
-                            <h5 className='text-[32px] font-bold'><span>{items?.packages?.length}</span> Tours found</h5>
+                            <h5 className='text-[32px] font-bold'><span>{packages?.length}</span> Tours found</h5>
                             <p className='text-sm'>Clear filter</p>
                         </div>
                         {/* advance search  btn  */}
@@ -375,7 +375,7 @@ const ToursLists = () => {
                         <div className=''>
                             {/* card section  */}
                             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-                                {loading && <div>
+                                {loading && <div className='flex items-center justify-center'>
                                     <div className="flex items-center justify-center min-h-screen">
                                         <LoadingSpinner text="Loading tour details..." />
                                     </div>
