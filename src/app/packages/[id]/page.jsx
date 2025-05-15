@@ -71,9 +71,9 @@ const PackageDetails = () => {
                         </Link>
                         <LiaAngleRightSolid className="text-white" />
                         <Link
-                            href="/tour-lists"
+                            href="/tours"
                         >
-                            Tour
+                            Tours
                         </Link>
                         <LiaAngleRightSolid className="text-white" />
                         <span>{singlePackage?.nameEn}</span>
