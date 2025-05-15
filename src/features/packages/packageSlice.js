@@ -1,12 +1,21 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 // All packages
+// export const fetchPackages = createAsyncThunk(
+//   'packages/fetchPackages',
+//   async () => {
+//     const res = await fetch('https://halal-fly-backend.vercel.app/api/v1/packages')
+//     const data = await res.json()
+//     return data?.data || []
+//   }
+// )
+
 export const fetchPackages = createAsyncThunk(
   'packages/fetchPackages',
-  async () => {
-    const res = await fetch('https://halal-fly-backend.vercel.app/api/v1/packages')
-    const data = await res.json()
-    return data?.data || []
+  async ({ page = 1, limit = 9 } = {}) => {
+    const res = await fetch(`https://halal-fly-backend.vercel.app/api/v1/packages?page=${page}&limit=${limit}`);
+    const data = await res.json();
+    return data; // full response, including meta info if needed
   }
 )
 

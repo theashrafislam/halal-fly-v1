@@ -29,9 +29,9 @@ const ToursLists = () => {
     const [tours, setTours] = useState([]);
     // const [loading, setLoading] = useState(true);
 
-    const [currentPage, setCurrentPage] = useState(1);
+    // const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
-    const limit = 9;
+    // const limit = 9;
 
     const tabs = [
         { name: "Hotel", icon: <FaHotel /> },
@@ -42,22 +42,41 @@ const ToursLists = () => {
     ];
 
     // api call using redux 
-    const dispatch = useAppDispatch()
-    const { items, loading, error } = useAppSelector((state) => state.packages)
+    // const dispatch = useAppDispatch()
+    // const { items, loading, error } = useAppSelector((state) => state.packages)
+
+    // useEffect(() => {
+    //     dispatch(fetchPackages())
+    // }, [dispatch]);
+
+    // useEffect(() => {
+    //     if (Array.isArray(items?.packages)) {
+    //         setTotalPages(Math.ceil(items.packages.length / limit));
+    //     }
+    // }, [items]);
+
+    // const paginatedItems = Array.isArray(items?.packages)
+    //     ? items.packages.slice((currentPage - 1) * limit, currentPage * limit)
+    //     : [];
+
+    const dispatch = useAppDispatch();
+    const { items, loading, error } = useAppSelector((state) => state.packages);
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const limit = 9;
+
+    // console.log(items);
 
     useEffect(() => {
-        dispatch(fetchPackages())
-    }, [dispatch]);
+        dispatch(fetchPackages({ page: currentPage, limit }));
+    }, [dispatch, currentPage]);
 
+    // Extract totalPages from response if backend provides it
     useEffect(() => {
-        if (Array.isArray(items?.packages)) {
-            setTotalPages(Math.ceil(items.packages.length / limit));
+        if (items?.data?.totalPages) {
+            setTotalPages(items.data.totalPages);
         }
     }, [items]);
-
-    const paginatedItems = Array.isArray(items?.packages)
-        ? items.packages.slice((currentPage - 1) * limit, currentPage * limit)
-        : [];
 
 
 
@@ -228,6 +247,12 @@ const ToursLists = () => {
                             <div>
 
                                 <h1 className='text-xl font-bold border-b-2 pb-2 border-[#E6E6E6]'>Search Tours</h1>
+
+                                {/* search box  */}
+                                <div>
+
+                                </div>
+
                                 <div className='border-b-2 border-[#E6E6E6]'>
                                     <h1 className='flex items-center justify-between py-5'><span className='text-base font-bold'>Landscape View</span><SlArrowDown /></h1>
                                     <h1 className='flex items-center justify-between py-5'><span className='text-base font-bold'>Traveler Type</span><SlArrowDown /></h1>
@@ -362,7 +387,7 @@ const ToursLists = () => {
                                     </div>
 
                                 </div>}
-                                {paginatedItems?.map((pkg, index) => (
+                                {items?.data?.packages?.map((pkg, index) => (
                                     <div key={index}>
                                         <DiscoveryCard
                                             card={{

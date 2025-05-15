@@ -17,11 +17,13 @@ const DiscoverWeeklySection = () => {
     dispatch(fetchPackages())
   }, [dispatch]);
 
+  // console.log(items?.data?.packages);
+
 
   const cardsPerPage = 4;
 
   const nextSlide = () => {
-    if (currentIndex < tours.length - cardsPerPage) {
+    if (currentIndex < items?.data?.packages?.length - cardsPerPage) {
       setCurrentIndex(currentIndex + 1);
     } else {
       setCurrentIndex(0);
@@ -32,7 +34,7 @@ const DiscoverWeeklySection = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
     } else {
-      setCurrentIndex(tours.length - cardsPerPage);
+      setCurrentIndex(items?.data?.packages?.length - cardsPerPage);
     }
   };
 
@@ -120,7 +122,7 @@ const DiscoverWeeklySection = () => {
               transform: `translateX(-${currentIndex * 25}%)`,
             }}
           >
-            {items?.packages?.map((pkg, index) => (
+            {items?.data?.packages?.map((pkg, index) => (
               <div
                 key={`desktop-${index}`}
                 className="w-1/2 lg:w-1/4 flex-shrink-0 px-3"
@@ -164,7 +166,7 @@ const DiscoverWeeklySection = () => {
 
         {/* Mobile cards - one per row, no slider */}
         <div className="grid grid-cols-1 gap-6 mb-12 md:hidden">
-          {items?.packages?.map((pkg, index) => (
+          {items?.data?.packages?.map((pkg, index) => (
             <div key={`mobile-${index}`} className="px-3">
               <DiscoveryCard
                 card={{
