@@ -65,7 +65,7 @@ const ToursLists = () => {
             setTotalPages(items.data.totalPages);
         }
     }, [items]);
-
+    const packages = items?.data?.packages || items?.data?.results || [];
 
 
     // console.log(items);
@@ -381,7 +381,7 @@ const ToursLists = () => {
                                     </div>
 
                                 </div>}
-                                {items?.data?.packages?.map((pkg, index) => (
+                                {packages?.map((pkg, index) => (
                                     <div key={index}>
                                         <DiscoveryCard
                                             card={{
