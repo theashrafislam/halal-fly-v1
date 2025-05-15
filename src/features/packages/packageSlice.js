@@ -12,12 +12,17 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 export const fetchPackages = createAsyncThunk(
   'packages/fetchPackages',
-  async ({ page = 1, limit = 9 } = {}) => {
-    const res = await fetch(`https://halal-fly-backend.vercel.app/api/v1/packages?page=${page}&limit=${limit}`);
+  async ({ page = 1, limit = 9, search = '' } = {}) => {
+    let url = `https://halal-fly-backend.vercel.app/api/v1/packages?page=${page}&limit=${limit}`;
+    if (search) {
+      url += `&search=${encodeURIComponent(search)}`;
+    }
+
+    const res = await fetch(url);
     const data = await res.json();
-    return data; // full response, including meta info if needed
+    return data;
   }
-)
+);
 
 // Single package
 export const fetchPackageById = createAsyncThunk(

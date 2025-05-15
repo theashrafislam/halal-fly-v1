@@ -20,6 +20,7 @@ import Pagination from '../Components/Common/Pagination';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { fetchPackages } from '@/features/packages/packageSlice';
 import LoadingSpinner from '../Components/Common/LoadingSpinner';
+import useDebounce from '@/utils/useDebounce';
 
 const ToursLists = () => {
 
@@ -30,7 +31,12 @@ const ToursLists = () => {
     // const [loading, setLoading] = useState(true);
 
     // const [currentPage, setCurrentPage] = useState(1);
+
     const [totalPages, setTotalPages] = useState(1);
+    const [searchTerm, setSearchTerm] = useState('');
+    const debouncedSearch = useDebounce(searchTerm, 500);
+    const [currentPage, setCurrentPage] = useState(1);
+
     // const limit = 9;
 
     const tabs = [
@@ -41,35 +47,17 @@ const ToursLists = () => {
         { name: "Family Trip", icon: <FaUsers /> },
     ];
 
-    // api call using redux 
-    // const dispatch = useAppDispatch()
-    // const { items, loading, error } = useAppSelector((state) => state.packages)
-
-    // useEffect(() => {
-    //     dispatch(fetchPackages())
-    // }, [dispatch]);
-
-    // useEffect(() => {
-    //     if (Array.isArray(items?.packages)) {
-    //         setTotalPages(Math.ceil(items.packages.length / limit));
-    //     }
-    // }, [items]);
-
-    // const paginatedItems = Array.isArray(items?.packages)
-    //     ? items.packages.slice((currentPage - 1) * limit, currentPage * limit)
-    //     : [];
 
     const dispatch = useAppDispatch();
     const { items, loading, error } = useAppSelector((state) => state.packages);
 
-    const [currentPage, setCurrentPage] = useState(1);
     const limit = 9;
 
     // console.log(items);
 
     useEffect(() => {
-        dispatch(fetchPackages({ page: currentPage, limit }));
-    }, [dispatch, currentPage]);
+        dispatch(fetchPackages({ page: currentPage, limit, search: debouncedSearch }));
+    }, [debouncedSearch, currentPage, dispatch]);
 
     // Extract totalPages from response if backend provides it
     useEffect(() => {
@@ -249,8 +237,14 @@ const ToursLists = () => {
                                 <h1 className='text-xl font-bold border-b-2 pb-2 border-[#E6E6E6]'>Search Tours</h1>
 
                                 {/* search box  */}
-                                <div>
-
+                                <div className="mb-4">
+                                    <input
+                                        type="text"
+                                        placeholder="Search packages..."
+                                        value={searchTerm}
+                                        onChange={(e) => setSearchTerm(e.target.value)}
+                                        className="px-4 py-2 border rounded w-full"
+                                    />
                                 </div>
 
                                 <div className='border-b-2 border-[#E6E6E6]'>
