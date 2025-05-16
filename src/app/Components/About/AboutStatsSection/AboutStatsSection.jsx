@@ -27,7 +27,7 @@ const stats = [
 
 const AboutStatsSection = () => {
     return (
-        <section className="bg-[#D09C3F] py-16">
+        <section className="bg-[#D0A148] py-16">
             <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
                 {stats.map((stat, idx) => (
                     <div key={idx} className="flex flex-col items-center">
