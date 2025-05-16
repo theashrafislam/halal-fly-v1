@@ -20,7 +20,7 @@ const AboutTravelGuideline = () => {
                 <button className='capitalize btn-primary mt-7'>contact us</button>
             </div>
             {/* absolute  */}
-            <div className=' absolute p-4 rounded-lg bg-[#D0A148] right-10 bottom-10 lg:right-3/12 lg:top-20 hidden md:flex flex-col items-center justify-center text-[#FFF]'>
+            <div className=' absolute p-4 h-32 rounded-lg bg-[#D0A148] right-10 bottom-10 lg:right-3/12 lg:top-20 hidden md:flex flex-col items-center justify-center text-[#FFF]'>
                 <BsAirplaneEngines className="w-16 pb-3 h-16"/>
                 <h5 className='text-6xl font-bold font-philosopher'>10M</h5>
                 <p className='text-base font-bold font-philosopher'>Different Parts</p>
