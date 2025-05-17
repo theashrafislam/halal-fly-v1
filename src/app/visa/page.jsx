@@ -4,6 +4,7 @@ import VisaTravelPerfection from '../Components/Visa/VisaTravelPerfection/VisaTr
 import AboutPopularToursSection from '../Components/About/AboutPopularToursSection/AboutPopularToursSection';
 import AboutHappyClientsSay from '../Components/About/AboutHappyClientsSay/AboutHappyClientsSay';
 import SelectCountrySection from '../Components/Visa/SelectCountrySection/SelectCountrySection';
+import VisaServicesSection from '../Components/Visa/VisaServicesSection/VisaServicesSection';
 
 const Visa = () => {
     return (
@@ -18,10 +19,12 @@ const Visa = () => {
                 {/* Our Popular Visa Type */}
                 <AboutPopularToursSection />
 
+                {/* Visa Services Section */}
+                <VisaServicesSection />
 
                 {/* Select The Country of your Choice */}
                 <SelectCountrySection />
-                
+
                 {/* What our happy clients say */}
                 <AboutHappyClientsSay />
             </div>
