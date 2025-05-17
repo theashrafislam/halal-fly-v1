@@ -170,7 +170,7 @@ const DiscoverWeeklySection = () => {
 
         {/* Mobile cards - one per row, no slider */}
         <div className="grid grid-cols-1 gap-6 mb-12 md:hidden">
-          {items?.data?.packages?.map((pkg, index) => (
+          {packages?.map((pkg, index) => (
             <div key={`mobile-${index}`} className="px-3">
               <DiscoveryCard
                 card={{
