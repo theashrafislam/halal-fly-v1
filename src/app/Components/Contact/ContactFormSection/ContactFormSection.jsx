@@ -10,11 +10,29 @@ const ContactFormSection = () => {
             </div>
 
             {/* contact input feilds  */}
-            <div>
+            <div className='flex flex-col gap-6'>
                 {/* name and email  */}
-                <div className='flex items-center justify-center gap-6'>
-                    <input type="text" name="name" id="name" placeholder='Name *' className='p-3 rounded-lg bg-white text-base w-full'/>
-                    <input type="email" name="email" id="email" placeholder='Email *' className='p-3 rounded-lg bg-white text-base w-full'/>
+                <div className='flex flex-col lg:flex-row items-center justify-center gap-6'>
+                    <input type="text" name="name" id="name" placeholder='Name *' className='p-3 rounded-lg bg-white text-base w-full' />
+                    <input type="email" name="email" id="email" placeholder='Email *' className='p-3 rounded-lg bg-white text-base w-full' />
+                </div>
+                {/* subject  */}
+                <input type="text" name="subject" id="subject" placeholder='Subject' className='p-3 rounded-lg bg-white text-base w-full' />
+
+                {/* comment  */}
+                <textarea rows={5} name="comment" id="comment" placeholder='Comment' className='p-3 rounded-lg bg-white text-base w-full'></textarea>
+
+                {/* checkbox  */}
+                <div className='flex items-center gap-1'>
+                    <input type="checkbox" name="checkBox" id="checkBox" />
+                    <p className='text-sm text-[#444]'>Save my name, email, and website in this browser for the next time I comment.</p>
+                </div>
+
+                {/* btn  */}
+                <div className='w-full'>
+                    <button className="bg-[#D0A148] rounded-lg py-[18px] px-8 text-white font-bold w-full sm:w-auto">
+                        Submit
+                    </button>
                 </div>
             </div>
         </div>

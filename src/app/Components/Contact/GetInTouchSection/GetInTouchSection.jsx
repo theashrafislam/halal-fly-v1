@@ -55,7 +55,7 @@ const GetInTouchSection = () => {
     ]
 
     return (
-        <div className='bg-[#171717] p-20 rounded-lg'>
+        <div className='bg-[#171717] p-4 lg:p-20 rounded-lg'>
 
             {/* header section  */}
             <div className='pb-14'>
@@ -65,8 +65,8 @@ const GetInTouchSection = () => {
             </div>
 
             {/* main section  */}
-            <div className='flex items-start gap-10'>
-                <div className='w-1/3 pr-8 border-r-2 border-white'>
+            <div className='flex flex-col lg:flex-row items-start gap-10'>
+                <div className='w-full lg:w-1/3 lg:pr-8 lg:border-r-2 border-white'>
                     {/* contacts  */}
                     <div className='flex flex-col gap-7 pb-7'>
                         {hello?.map((item, i) => (
@@ -105,7 +105,7 @@ const GetInTouchSection = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-2/3'>
+                <div className='w-full lg:w-2/3'>
                     <ContactFormSection />
                 </div>
             </div>
