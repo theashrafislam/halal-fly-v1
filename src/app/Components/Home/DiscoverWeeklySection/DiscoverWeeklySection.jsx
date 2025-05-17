@@ -5,17 +5,21 @@ import LoadingSpinner from "../../Common/LoadingSpinner";
 import DiscoveryCard from "./DiscoveryCard";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { fetchPackages } from "@/features/packages/packageSlice";
+import { useSelector } from "react-redux";
 
 const DiscoverWeeklySection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // api call using redux 
   const dispatch = useAppDispatch()
+  const searchTerm = useSelector((state) => state.search.term);
   const { items, loading, error } = useAppSelector((state) => state.packages)
 
   useEffect(() => {
-    dispatch(fetchPackages())
-  }, [dispatch]);
+    dispatch(fetchPackages({search: searchTerm}))
+  }, [dispatch, searchTerm]);
+
+  const packages = items?.data?.packages || items?.data?.results || [];
 
   // console.log(items?.data?.packages);
 
@@ -122,7 +126,7 @@ const DiscoverWeeklySection = () => {
               transform: `translateX(-${currentIndex * 25}%)`,
             }}
           >
-            {items?.data?.packages?.map((pkg, index) => (
+            {packages?.map((pkg, index) => (
               <div
                 key={`desktop-${index}`}
                 className="w-1/2 lg:w-1/4 flex-shrink-0 px-3"

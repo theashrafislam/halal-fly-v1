@@ -36,6 +36,7 @@ const ToursLists = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const debouncedSearch = useDebounce(searchTerm, 500);
     const [currentPage, setCurrentPage] = useState(1);
+    const [destinationInput, setDestinationInput] = useState('');
 
     // const limit = 9;
 
@@ -133,6 +134,8 @@ const ToursLists = () => {
                                                 type="text"
                                                 placeholder="Where are you going?"
                                                 className="border p-3 rounded-md w-full"
+                                                value={destinationInput}
+                                                onChange={(e) => setDestinationInput(e.target.value)}
                                             />
                                         </div>
 
@@ -171,7 +174,11 @@ const ToursLists = () => {
 
                                         {/* Search Button */}
                                         <div className='flex justify-end w-full'>
-                                            <button className="bg-[#D0A148] transition-all duration-300 flex items-center justify-center gap-1 text-[#FFFFFF] px-6 py-3 rounded-md font-semibold w-full md:w-auto">
+                                            <button className="bg-[#D0A148] transition-all duration-300 flex items-center justify-center gap-1 text-[#FFFFFF] px-6 py-3 rounded-md font-semibold w-full md:w-auto"
+                                                onClick={() => {
+                                                    setSearchTerm(destinationInput);
+                                                }}
+                                            >
                                                 <CiSearch className='text-2xl' />
                                                 <span>Search</span>
                                             </button>

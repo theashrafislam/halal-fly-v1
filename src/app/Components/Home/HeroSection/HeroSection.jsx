@@ -1,5 +1,6 @@
 "use client";
 
+import { setSearchTerm } from "@/features/search/searchSlice";
 import Image from "next/image";
 import React, { useState } from "react";
 import { CiCalendarDate, CiSearch } from "react-icons/ci";
@@ -7,9 +8,20 @@ import { FaSearchPlus, FaUser } from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdMeetingRoom } from "react-icons/md";
+import { useDispatch } from "react-redux";
 
 const HeroSection = () => {
   const [activeTab, setActiveTab] = useState("Hotel");
+  const [search, setSearch] = useState('');
+  const [destinationInput, setDestinationInput] = useState('');
+
+  const dispatch = useDispatch();
+  const handleSearch = () => {
+    setSearch(destinationInput);
+    dispatch(setSearchTerm(search));
+  };
+
+  // console.log(searchTerm);
 
   const tabs = [
     { name: "Hotel", icon: "/icons/hotel.svg" },
@@ -47,11 +59,10 @@ const HeroSection = () => {
                 key={tab.name}
                 onClick={() => setActiveTab(tab.name)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-full transition text-sm sm:text-base
-                                    ${
-                                      activeTab === tab.name
-                                        ? "bg-[var(--button-color)] text-white font-semibold"
-                                        : "bg-[var(--button-color)]/80 text-white hover:bg-[var(--button-color)] hover:text-white"
-                                    }`}
+                                    ${activeTab === tab.name
+                    ? "bg-[var(--button-color)] text-white font-semibold"
+                    : "bg-[var(--button-color)]/80 text-white hover:bg-[var(--button-color)] hover:text-white"
+                  }`}
               >
                 <Image src={tab.icon} alt={tab.name} width={20} height={20} />
                 {tab.name}
@@ -74,6 +85,8 @@ const HeroSection = () => {
                   type="text"
                   placeholder="Where are you going?"
                   className="border p-3 rounded-md w-full"
+                  value={destinationInput}
+                  onChange={(e) => setDestinationInput(e.target.value)}
                 />
               </div>
 
@@ -115,7 +128,9 @@ const HeroSection = () => {
 
               {/* Search Button */}
               <div className="flex justify-end w-full">
-                <button className="btn-primary flex items-center justify-center gap-1 px-6 py-3 rounded-md w-full md:w-auto">
+                <button className="btn-primary flex items-center justify-center gap-1 px-6 py-3 rounded-md w-full md:w-auto"
+                  onClick={handleSearch}
+                >
                   <CiSearch className="text-2xl text-[#FD4C5C]" />
                   <span>Search</span>
                 </button>
