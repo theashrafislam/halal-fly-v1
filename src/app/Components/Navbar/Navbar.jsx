@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
@@ -30,9 +31,9 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <ul className="flex items-center gap-[46px]">
-          <li className="font-semibold cursor-pointer hover:text-[#D0A148]">
+          <Link href={'/tours'} className="font-semibold cursor-pointer hover:text-[#D0A148]">
             Tours
-          </li>
+          </Link>
           <li className="font-semibold cursor-pointer hover:text-[#D0A148]">
             Destination
           </li>
@@ -113,7 +114,7 @@ const Navbar = () => {
           {/* Scrollable Content */}
           <div className="overflow-y-auto px-4 py-4 flex-1">
             <ul className="space-y-4">
-              <li className="font-medium">Tours</li>
+              <Link href={'/tours'} className="font-medium">Tours</Link>
               <li className="font-medium">Destination</li>
               <li className="font-medium">Blog</li>
               <li className="font-medium">Page</li>
