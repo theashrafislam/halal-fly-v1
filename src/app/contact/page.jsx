@@ -1,9 +1,12 @@
 import React from 'react';
+import ContactHeaderSection from '../Components/Contact/ContactHeaderSection';
 
 const ContactUs = () => {
     return (
         <div>
-            hell i am contact us page
+            <div>
+                <ContactHeaderSection />
+            </div>
         </div>
     );
 };
