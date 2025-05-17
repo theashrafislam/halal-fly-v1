@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { IoChatbubblesOutline } from 'react-icons/io5';
+import ContactFormSection from '../ContactFormSection/ContactFormSection';
 
 const GetInTouchSection = () => {
 
@@ -64,7 +65,7 @@ const GetInTouchSection = () => {
             </div>
 
             {/* main section  */}
-            <div className='flex items-center gap-5'>
+            <div className='flex items-start gap-10'>
                 <div className='w-1/3 pr-8 border-r-2 border-white'>
                     {/* contacts  */}
                     <div className='flex flex-col gap-7 pb-7'>
@@ -104,7 +105,9 @@ const GetInTouchSection = () => {
                         </div>
                     </div>
                 </div>
-                <div></div>
+                <div className='w-2/3'>
+                    <ContactFormSection />
+                </div>
             </div>
         </div>
     );
