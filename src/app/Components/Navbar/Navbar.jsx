@@ -43,9 +43,9 @@ const Navbar = () => {
           <Link href={'/about'} className="font-semibold cursor-pointer hover:text-[#D0A148]">
             About
           </Link>
-          <li className="font-semibold cursor-pointer hover:text-[#D0A148]">
+          <Link href={'/contact'} className="font-semibold cursor-pointer hover:text-[#D0A148]">
             Contact
-          </li>
+          </Link>
         </ul>
 
         {/* Desktop Buttons */}
@@ -118,7 +118,7 @@ const Navbar = () => {
               <li className="font-medium">Destination</li>
               <li className="font-medium">Blog</li>
               <Link href={'/about'} className="font-medium">About</Link>
-              <li className="font-medium">Contact</li>
+              <Link href={'/contact'} className="font-medium">Contact</Link>
             </ul>
           </div>
 
