@@ -37,9 +37,9 @@ const Navbar = () => {
           <li className="font-semibold cursor-pointer hover:text-[#D0A148]">
             Destination
           </li>
-          <li className="font-semibold cursor-pointer hover:text-[#D0A148]">
-            Blog
-          </li>
+          <Link href={'/visa'} className="font-semibold cursor-pointer hover:text-[#D0A148]">
+            Visa
+          </Link>
           <Link href={'/about'} className="font-semibold cursor-pointer hover:text-[#D0A148]">
             About
           </Link>
@@ -116,7 +116,7 @@ const Navbar = () => {
             <ul className="space-y-4">
               <Link href={'/tours'} className="font-medium">Tours</Link>
               <li className="font-medium">Destination</li>
-              <li className="font-medium">Blog</li>
+              <Link href={'/visa'} className="font-medium">Visa</Link>
               <Link href={'/about'} className="font-medium">About</Link>
               <Link href={'/contact'} className="font-medium">Contact</Link>
             </ul>
