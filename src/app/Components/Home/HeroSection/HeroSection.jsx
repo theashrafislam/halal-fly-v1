@@ -2,7 +2,7 @@
 
 import { setSearchTerm } from "@/features/search/searchSlice";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CiCalendarDate, CiSearch } from "react-icons/ci";
 import { FaSearchPlus, FaUser } from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
@@ -18,8 +18,13 @@ const HeroSection = () => {
   const dispatch = useDispatch();
   const handleSearch = () => {
     setSearch(destinationInput);
-    dispatch(setSearchTerm(search));
   };
+
+  useEffect(() => {
+  if (search) {
+    dispatch(setSearchTerm(search));
+  }
+}, [search]);
 
   // console.log(searchTerm);
 
