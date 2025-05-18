@@ -113,7 +113,7 @@ const Navbar = () => {
         <div className="flex flex-col justify-between h-full">
           {/* Scrollable Content */}
           <div className="overflow-y-auto px-4 py-4 flex-1">
-            <ul className="space-y-4">
+            <ul className="flex flex-col gap-4 items-start">
               <Link href={'/tours'} className="font-medium">Tours</Link>
               <li className="font-medium">Destination</li>
               <Link href={'/visa'} className="font-medium">Visa</Link>
