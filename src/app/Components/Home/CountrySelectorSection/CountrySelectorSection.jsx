@@ -26,7 +26,8 @@ const CountrySelectorSection = () => {
                 </div>
             </div>
             {/* cards (positioned overlapping the bottom part) */}
-            <div className='flex flex-col md:flex-row bg-[#000000] lg:bg-transparent items-center gap-5 z-10 lg:absolute px-4 lg:px-0 py-4 lg:mx-0 lg:py-0 right-20 bottom-30'>
+            <div className='flex flex-col md:flex-row bg-[#000000] lg:bg-transparent items-center gap-5 z-10 lg:absolute px-4 lg:px-0 py-4 lg:mx-0 lg:py-0 lg:right-20 lg:bottom-0 lg:mb-10'>
+            
                 {[1, 2, 3].map((_, i) => (
                     <div key={i}>
                         <Image

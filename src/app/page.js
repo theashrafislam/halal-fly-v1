@@ -34,7 +34,7 @@ export default function Home() {
       <PopularDestinationsSection />
 
       {/* Country Selector Section */}
-      <CountrySelectorSection />
+      {/* <CountrySelectorSection /> */}
 
       {/* Review Section  */}
       <ReviewSection />

@@ -8,7 +8,7 @@ const TravelGuidelineSection = () => {
   return (
     <section className="bg-[#10111A] py-12 lg:py-16 overflow-hidden">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
         {/* Mobile view - Image first, then content */}
         <div className="md:hidden">
           {/* Image */}
