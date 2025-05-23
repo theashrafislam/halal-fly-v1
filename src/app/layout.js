@@ -1,8 +1,6 @@
 import { Poppins, Philosopher, La_Belle_Aurore } from "next/font/google";
 import "./globals.css";
-import Navbar from "./Components/Navbar/Navbar";
-import Footer from "./Components/Footer/Footer";
-import Providers from "@/store/providers";
+import ClientLayoutWrapper from "./ClientLayoutWrapper";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -33,20 +31,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.className} ${philosopher.variable} ${laBelleAurore.variable} antialiased flex flex-col min-h-screen`}
       >
-        {/* header section  */}
-        <header>
-          <Navbar />
-        </header>
-
-        {/* main section  */}
-        <main className="flex-grow pt-16 lg:pt-0">
-          <Providers>{children}</Providers>
-        </main>
-
-        {/* footer section  */}
-        <footer>
-          <Footer />
-        </footer>
+        <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
       </body>
     </html>
   );
