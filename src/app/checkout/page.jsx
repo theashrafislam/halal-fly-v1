@@ -1,9 +1,13 @@
+// 'use client'
+
 import React from 'react';
 import { FaPlus } from 'react-icons/fa';
 import { ImUsers } from "react-icons/im";
 import { FaMinus } from "react-icons/fa6";
+// import { useRouter } from 'next/navigation';
 
 const CheckOutPage = () => {
+    // const router = useRouter();
     return (
         <div className='bg-[#000000] py-[80px] md:py-[100px]'>
             <div className='text-white h-full max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto flex flex-col-reverse lg:flex-row items-start gap-10'>
@@ -187,7 +191,9 @@ const CheckOutPage = () => {
 
                         {/* btn  */}
                         <div className='flex flex-col lg:flex-row items-center gap-4 pt-16'>
-                            <button className='w-full lg:w-1/2 bg-black rounded-lg hover:bg-[#D0A148] hover:text-white border border-[#D0A148] text-[#D0A148] py-3 transition-all duration-300 ease-in-out'>Cancel</button>
+                            <button
+                                // onClick={() => router.back()}
+                                className='w-full lg:w-1/2 bg-black rounded-lg hover:bg-[#D0A148] hover:text-white border border-[#D0A148] text-[#D0A148] py-3 transition-all duration-300 ease-in-out'>Cancel</button>
                             <button className='w-full lg:w-1/2 bg-[#D0A148] hover:bg-black hover:text-[#D0A148] hover:border hover:border-[#D0A148] rounded-lg text-white py-3'>Complete Booking</button>
                         </div>
 
