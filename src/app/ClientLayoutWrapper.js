@@ -17,7 +17,7 @@ export default function ClientLayoutWrapper({ children }) {
                 </header>
             )}
 
-            <main className="flex-grow pt-16 lg:pt-0">
+            <main className="flex-grow lg:pt-0">
                 <Providers>{children}</Providers>
             </main>
 

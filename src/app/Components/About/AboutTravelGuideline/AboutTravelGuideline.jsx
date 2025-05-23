@@ -8,7 +8,7 @@ const AboutTravelGuideline = () => {
             className="relative bg-[#000000] bg-cover bg-center bg-no-repeat h-[600px] text-white"
             style={{ backgroundImage: "url('/images/travel-bg.png')" }}
         >
-            <div className="space-y-4 text-start max-w-5xl  px-4 sm:px-6 lg:px-8 mx-auto pt-20">
+            <div className="space-y-4 text-start max-w-5xl px-4 sm:px-6 lg:px-8 mx-auto pt-20">
                 <h6 className='text-[#D0A148] capitalize font-philosopher text-xl'>welcome to our store.</h6>
                 <h2 className="font-bold mb-4 text-[#D0A148] font-philosopher text-3xl md:text-4xl">Discover Our Travel <br /> Guideline</h2>
                 <p className="text-lg text-[#FFF]">
